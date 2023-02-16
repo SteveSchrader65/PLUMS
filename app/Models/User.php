@@ -72,16 +72,16 @@ class User extends Authenticatable
         return $this->hasOne(UserProfile::class,'id','id');
     }
 
-//    /**
-//     * This method establishes a Many-to-One relationship between Users and Countries
-//     * (ie: Many users belong to a Country)
-//     *
-//     * @return belongsTo
-//     */
-//    public function country(): BelongsTo
-//    {
-//        return $this->belongsTo(Country::class, 'country', 'code_3');
-//    }
+    /**
+     * This method establishes a Many-to-One relationship between Users and Countries
+     * (ie: Many users belong to a Country)
+     *
+     * @return belongsTo
+     */
+    public function country(): BelongsTo
+    {
+        return $this->belongsTo(Country::class, 'country', 'code_3');
+    }
 
     /**
      * This method establishes a One-to-Many relationship between users and quiz attempts

@@ -29,14 +29,14 @@ class Country extends Model
 
     public $timestamps = true;
 
-//    /**
-//     * This method establishes a Many-to-One relationship between Users and Countries
-//     * (ie: A Country has many Users)
-//     *
-//     * @return HasMany
-//     */
-//    public function users(): HasMany
-//    {
-//        return $this->hasMany(UserProfile::class, 'country', 'code_3');
-//    }
+    /**
+     * This method establishes a Many-to-One relationship between Users and Countries
+     * (ie: A Country has many Users)
+     *
+     * @return HasMany
+     */
+    public function users(): HasMany
+    {
+        return $this->hasMany(UserProfile::class, 'country', 'code_3');
+    }
 }

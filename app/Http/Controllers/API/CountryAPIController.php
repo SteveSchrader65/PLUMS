@@ -129,7 +129,7 @@ class CountryAPIController extends APIBaseController
     {
         $country = Country::query()
             ->where('id', $id)
-            //->with('users')
+            ->with('users')
             ->find($id);
 
         if (!is_null($country) && $country->count() > 0) {
