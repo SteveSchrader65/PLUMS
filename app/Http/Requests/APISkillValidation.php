@@ -39,6 +39,7 @@ class APISkillValidation extends FormRequest
             'field_id' => [
                 'required',
                 'integer',
+                'exists:fields,id',
             ],
         ];
     }
@@ -74,6 +75,7 @@ class APISkillValidation extends FormRequest
             'description.max' => 'Maximum length of Skill description is 512 characters',
             'field_id.required' => 'A value to indicate which Field this Skill belongs to is required.',
             'field_id.integer' => 'The \'field_id\' value must be an integer.',
+            'field_id.exists' => 'The FieldID does not exist.'
         ];
     }
 }

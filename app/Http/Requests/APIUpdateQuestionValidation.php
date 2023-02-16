@@ -33,7 +33,7 @@ class APIUpdateQuestionValidation extends FormRequest
             ],
             'answer_set' => [
                 'required',
-                'size: 2',
+                'min: 2',
             ],
             'points_value' => [
                 'required',
@@ -89,7 +89,7 @@ class APIUpdateQuestionValidation extends FormRequest
             'question_text.min' => 'Question text must be a minimum of 5 characters.',
             'question_text.max' => 'Question text must be a maximum of 512 characters.',
             'answer_set.required' => 'Please enter an array of AnswerIDs enclosed in [] brackets.',
-            'answer_set.size' => 'An answer-set for a Question requires at least 2 Answers.',
+            'answer_set.min' => 'An answer-set for a Question requires at least 2 Answers.',
             'points_value.required' => 'A Point value for the question is required.',
             'points_value.min' => 'Minimum Point value for a question is 0.25.',
             'is_available.required' => 'Indicate if Question is available for usage.',

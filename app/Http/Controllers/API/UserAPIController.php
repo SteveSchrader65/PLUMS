@@ -344,6 +344,8 @@ class UserAPIController extends APIBaseController
                     case "email":
                         $rules = [
                             'email' => 'email: rfc, dns',
+
+                            // NOTE: MODIFY VALIDATION TO EXCLUDE CURRENT EMAIL ADDRESS
                             'unique:users',
                         ];
 

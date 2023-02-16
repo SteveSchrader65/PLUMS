@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Models\Field;
 use App\Models\Quiz;
 use App\Models\Skill;
 use App\Http\Requests\APISkillValidation;
@@ -309,8 +308,6 @@ class SkillAPIController extends APIBaseController
     public function update_attribute(Request $request, int $id): JsonResponse
     {
         $skill = Skill::query()->where('id', $id)->first();
-        $max_field = Field::all()->count();
-        //$max_field = Field::getPdo()->lastInsertId();
 
         $data = $request->input();
         $keyz = array_keys($data);
@@ -348,13 +345,14 @@ class SkillAPIController extends APIBaseController
                         break;
                     case "field_id":
                         $rules = [
-                            // min_field AND max_field NOT WORKING
-                            'field_id' => "min: 1| max: $max_field",
-                        ];
+                            'required',
+                            'integer',
+                            'exists:fields,id',                        ];
 
                         $error_messages = [
-                            'field_id.min' => 'The minimum value for FieldID is 1.',
-                            'field_id.max' => "The maximum value for FieldID is $max_field",
+                            'field_id.required' => 'A value to indicate which Field this Skill belongs to is required.',
+                            'field_id.integer' => 'The \'field_id\' value must be an integer.',
+                            'field_id.exists' => 'The FieldID does not exist.'
                         ];
                         break;
                 }

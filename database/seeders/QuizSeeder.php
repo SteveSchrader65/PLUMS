@@ -75,9 +75,10 @@ class QuizSeeder extends Seeder
             $quiz['average_time'] = 0;
 
             $questions = json_decode($quiz['question_set']);
+            $set_copy = $questions;
 
             // Check if the question can be added to a quiz
-            foreach ($questions as $question) {
+            foreach ($questions as $key => $question) {
                 if ((int)$question) {
                     $this_question = Question::query()
                         ->where('id', (int)$question)
@@ -87,11 +88,13 @@ class QuizSeeder extends Seeder
                         $this_question['times_used'] += 1;
                         $this_question->save();
                     } else {
-                        // REMOVE QUESTION FROM QUESTION_SET
+                        // Remove the unavailable question from the set
+                        array_splice($set_copy, $key, 1);
                     }
                 }
             }
 
+            $quiz['question_set'] = json_encode($set_copy);
             Quiz::create($quiz);
             $progressBar->advance();
         }

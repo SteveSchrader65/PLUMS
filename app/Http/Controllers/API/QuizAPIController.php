@@ -3,14 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Requests\APIUpdateQuizValidation;
-use App\Models\Field;
-use App\Models\Level;
 use App\Models\Question;
 use App\Models\Quiz;
 use App\Http\Requests\APIStoreQuizValidation;
 use App\Http\Requests\PaginationRequest;
 use App\Http\Requests\ValidateSearchRequest;
-use App\Models\Skill;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Carbon;
@@ -420,6 +417,7 @@ class QuizAPIController extends APIBaseController
         $quiz = Quiz::query()->where('id', $id)->first();
         $data = $request->input();
         $keyz = array_keys($data);
+
         $error_list = [];
         $has_errors = False;
 
@@ -437,11 +435,13 @@ class QuizAPIController extends APIBaseController
                     case "title":
                         $rules = [
                             'required',
+                            'unique:quizzes,title',
                             'title' => 'min: 5|max: 128',
                         ];
 
                         $error_messages = [
                             'title.required' => 'A Quiz title is required.',
+                            'title.unique' => 'A unique Quiz title is required',
                             'title.min' => 'Minimum length of a Quiz title is 5 characters.',
                             'title.max' => 'Maximum length of a Quiz title is 128 characters.',
                         ];
@@ -460,6 +460,7 @@ class QuizAPIController extends APIBaseController
                         break;
                     case "question_set":
                         $quiz['question_set'] = $this->validate_questions($request['question_set']);
+                        //$question_count = $this->validate_questions($request['question_set'], true);
 
                         $rules = [
                             'question_set' => 'required|min: 4',
@@ -649,12 +650,14 @@ class QuizAPIController extends APIBaseController
     }
 
     /**
-     * Helper function used to validate the availability of a Question to be used for a Quiz
+     * Helper function used to validate the availability of the Questions to be used for a Quiz
+     * NOTE: Adding a True parameter to the function call returns a count of the question_set
      *
      * @param string $question_set
-     * @return string
+     * @param bool $flag
+     * @return string|int
      */
-    public function validate_questions(string $question_set): string
+    public function validate_questions(string $question_set, Bool $flag = False): string|int
     {
         $question_list = json_decode($question_set, true);
 
@@ -677,6 +680,12 @@ class QuizAPIController extends APIBaseController
             }
         }
 
+        // Return count of valid questions
+        if ($flag) {
+            return count($question_list);
+        }
+
+        // Return valid question list
         return json_encode($question_list, true);
     }
 }

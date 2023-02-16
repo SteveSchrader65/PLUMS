@@ -28,13 +28,10 @@ class APIUpdateQuizValidation extends FormRequest
      */
     public function rules(): array
     {
-        $max_level = Level::latest('id')->take(1)->get('id');
-        $max_field = Field::latest('id')->take(1)->get('id');
-        $max_skill = Skill::latest('id')->take(1)->get('id');
-
         return [
             'title' => [
                 'required',
+                'unique:quizzes,title',
                 'min: 5',
                 'max: 128',
             ],
@@ -103,6 +100,7 @@ class APIUpdateQuizValidation extends FormRequest
     {
         return [
             'title.required' => 'A Quiz title is required.',
+            'title.unique' => 'A unique Quiz title is required',
             'title.min' => 'Minimum length of Quiz title is 5 characters.',
             'title.max' => 'Maximum length of Quiz title is 128 characters.',
             'description.required' => 'A description of thw Quiz is required.',

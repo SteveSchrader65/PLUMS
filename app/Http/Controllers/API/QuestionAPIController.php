@@ -364,7 +364,6 @@ class QuestionAPIController extends APIBaseController
     public function update_attribute(Request $request, int $id): JsonResponse
     {
         $question = Question::query()->where('id', $id)->first();
-
         $data = $request->input();
         $keyz = array_keys($data);
 
@@ -391,14 +390,15 @@ class QuestionAPIController extends APIBaseController
                         break;
                     case "answer_set":
                         $question['answer_set'] = $this->validate_answers($request['answer_set']);
+                        //$answer_count = $this->validate_answers($request['answer_set'], true);
 
                         $rules = [
-                            'answer_set' => 'required|size: 2',
+                            'answer_set' => 'required|min: 2',
                         ];
 
                         $error_messages = [
                             'answer_set.required' => 'Please enter an array of AnswerIDs enclosed in [] brackets.',
-                            'answer_set.size' => 'An answer-set for a Question requires at least 2 Answers.',
+                            'answer_set.min' => 'An answer-set for a Question requires at least 2 Answers.',
                         ];
                         break;
                     case "points_value":
@@ -575,11 +575,13 @@ class QuestionAPIController extends APIBaseController
 
     /**
      * Helper function used to validate the existence of an Answer to be used for a Question
+     * NOTE: Adding a True parameter to the function call returns a count of the answer_set
      *
      * @param string $answer_set
-     * @return string
+     * @param bool $flag
+     * @return string|int
      */
-    public function validate_answers(String $answer_set): string
+    public function validate_answers(String $answer_set, Bool $flag = False): string|int
     {
         $answer_list = json_decode($answer_set, true);
 
@@ -595,6 +597,12 @@ class QuestionAPIController extends APIBaseController
             }
         }
 
+        // Return count of valid answers
+        if ($flag) {
+            return count($answer_list);
+        }
+
+        // Return valid answer list
         return json_encode($answer_list, true);
     }
 }
