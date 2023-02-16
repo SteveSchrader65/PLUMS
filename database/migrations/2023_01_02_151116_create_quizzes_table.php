@@ -13,24 +13,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-//        NOTE: CONDITION WHEREBY ALL VALUES MUST BE VALID, OTHERWISE CAN BE null
-//              if (isset($item['is_available']) && $item['is_available']) {
-//
-//        $quiz['title'] = $item['title'];
-//        $quiz['description'] = $item['description'];
-//        $quiz['question_set'] = $item['question_set'];
-//        $quiz['level_id'] = $item['level_id'];
-//        $quiz['field_id'] = $item['field_id'];
-//        $quiz['skill_id'] = $item['skill_id'];
-//        $quiz['is_available'] = $item['is_available'];
-//        $quiz['times_attempted'] = 0;
-//        $quiz['prepared_by'] = 1;
-//        $quiz['fastest_time'] = '000345';
-//        $quiz['average_time'] = '000500';
-//         OTHERWISE, ITEMS MAY CURRENTLY HOLD null VALUES
-//         AS THE is_available FLAG INDICATES THAT A QUIZ IS
-//         CURRENTLY 'UNDER CONSTRUCTION'
-//        }
         Schema::create('quizzes', function (Blueprint $table) {
             $table->id();
             $table->string('title');
