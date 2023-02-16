@@ -602,7 +602,7 @@ class QuestionAPIController extends APIBaseController
             return count($answer_list);
         }
 
-        // Return valid answer list
+        // Return validated answer list
         return json_encode($answer_list, true);
     }
 }

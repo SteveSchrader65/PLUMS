@@ -685,7 +685,7 @@ class QuizAPIController extends APIBaseController
             return count($question_list);
         }
 
-        // Return valid question list
+        // Return validated question list
         return json_encode($question_list, true);
     }
 }
