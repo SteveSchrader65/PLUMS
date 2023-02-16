@@ -435,6 +435,7 @@ class QuizAPIController extends APIBaseController
                     case "title":
                         $rules = [
                             'required',
+                            // NOTE: MODIFY VALIDATION TO EXCLUDE CURRENT TITLE
                             'unique:quizzes,title',
                             'title' => 'min: 5|max: 128',
                         ];
@@ -515,6 +516,7 @@ class QuizAPIController extends APIBaseController
 
         if ($has_errors) {
             return $this->sendError($error_list);
+            //return $this->sendError(json_encode($error_list));
         }
 
         $quiz['updated_at'] = Carbon::now();
@@ -522,6 +524,7 @@ class QuizAPIController extends APIBaseController
 
         return $this->sendResponse(
             $quiz,
+            //json_decode($quiz),
             "Quiz #$id updated successfully",
         );
     }

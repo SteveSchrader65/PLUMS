@@ -31,6 +31,7 @@ class APIUpdateQuizValidation extends FormRequest
         return [
             'title' => [
                 'required',
+                // NOTE: MODIFY VALIDATION TO EXCLUDE CURRENT TITLE
                 'unique:quizzes,title',
                 'min: 5',
                 'max: 128',

@@ -153,7 +153,7 @@ class UserAPIController extends APIBaseController
     {
         $user = User::query()
             ->where('id', $id)
-            //->with('country')
+            ->with('country')
             //->with('attempts')
             //->with('roles')
             //->with('permissions')

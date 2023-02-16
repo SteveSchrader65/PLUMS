@@ -43,11 +43,13 @@ class APIUserValidation extends FormRequest
             ],
             'country' => [
                 'required',
+                // NOTE: MODIFY VALIDATION TO EXCLUDE CURRENT COUNTRY
                 'exists:countries,code_3',
             ],
             'email' => [
                 'required',
                 'email: rfc, dns',
+                // NOTE: MODIFY VALIDATION TO EXCLUDE CURRENT EMAIL ADDRESS
                 'unique:users'
             ],
             'password' => [

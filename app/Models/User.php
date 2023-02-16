@@ -59,8 +59,6 @@ class User extends Authenticatable
 
     public $timestamps = true;
 
-
-
     /**
      * This method establishes a One-to-One relationship between users and profiles
      * (ie: A user has a profile)
