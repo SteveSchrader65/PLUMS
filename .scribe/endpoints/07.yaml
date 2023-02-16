@@ -1,0 +1,422 @@
+name: UserAPI
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/users
+    metadata:
+      groupName: UserAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a list of the user records in the API'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      'http://localhost/api/users/':
+        name: 'http://localhost/api/users/'
+        description: ''
+        required: false
+        example: nihil
+        type: string
+        custom: []
+    cleanUrlParameters:
+      'http://localhost/api/users/': nihil
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      page:
+        name: page
+        description: ''
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: ''
+        required: false
+        example: 4
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      page: 1
+      per_page: 4
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"success":true,"data":{"current_page":1,"data":[{"id":1,"email":"admin@plums.com","email_verified_at":null,"profile":{"given_name":"Adrian","family_name":"Smith","city":"Birmingham","country":"GBR"},"created_at":"2023-01-29T05:00:38.000000Z","updated_at":"2023-01-29T05:00:38.000000Z"},{"id":2,"email":"lsd@plums.com","email_verified_at":null,"profile":{"given_name":"Alice","family_name":"Dee","city":"Sacramento","country":"USA"},"created_at":"2023-01-29T05:00:38.000000Z","updated_at":"2023-01-29T05:00:38.000000Z"},{"id":3,"email":"stevelives@home.com","email_verified_at":null,"profile":{"country":"GBR","updated_at":"2023-01-29T05:43:17.000000Z","created_at":"2023-01-29T05:43:17.000000Z","given_name":"Stevie","family_name":"Wonderful","city":"London"},"created_at":"2023-01-29T05:00:38.000000Z","updated_at":"2023-01-29T05:43:17.000000Z"},{"id":4,"email":"peter123@example.com","email_verified_at":null,"profile":{"given_name":"Peter","family_name":"Smith","city":"Miami","country":"USA"},"created_at":"2023-01-29T05:00:38.000000Z","updated_at":"2023-01-29T05:00:38.000000Z"}],"first_page_url":"http:\/\/localhost\/api\/users?page=1","from":1,"last_page":3,"last_page_url":"http:\/\/localhost\/api\/users?page=3","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/users?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/users?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/users?page=3","label":"3","active":false},{"url":"http:\/\/localhost\/api\/users?page=2","label":"Next &raquo;","active":false}],"next_page_url":"http:\/\/localhost\/api\/users?page=2","path":"http:\/\/localhost\/api\/users","per_page":4,"prev_page_url":null,"to":4,"total":9},"message":"Total of 4 Users retrieved"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '53'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/users/search
+    metadata:
+      groupName: UserAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Search for user records where email or profile field matches search term'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      'http://localhost/api/users/search':
+        name: 'http://localhost/api/users/search'
+        description: ''
+        required: false
+        example: sapiente
+        type: string
+        custom: []
+    cleanUrlParameters:
+      'http://localhost/api/users/search': sapiente
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      search:
+        name: search
+        description: 'Must not be greater than  64 characters.'
+        required: true
+        example: oxxga
+        type: string
+        custom: []
+    cleanBodyParameters:
+      search: oxxga
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "success": true,
+               "data": [{
+                   "id": 2,
+                   "email": "lsd@plums.com",
+                   "email_verified_at": null,
+                   "profile": {
+                       "given_name": "Alice",
+                       "family_name": "Dee",
+                       "city": "Sacramento",
+                       "country": "USA"
+                   },
+                   "created_at": "2023-01-29T05:00:38.000000Z",
+                   "updated_at": "2023-01-29T05:00:38.000000Z"
+               },
+               {
+                   "id": 4,
+                   "email": "peter123@example.com",
+                   "email_verified_at": null,
+                   "profile": {
+                       "given_name": "Peter",
+                       "family_name": "Smith",
+                       "city": "Miami",
+                       "country": "USA"
+                   },
+                   "created_at": "2023-01-29T05:00:38.000000Z",
+                   "updated_at": "2023-01-29T05:00:38.000000Z"
+               }],
+           "message": "2 matching Users retrieved"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/users/{id}'
+    metadata:
+      groupName: UserAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a user record'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      'http://localhost/api/users/2':
+        name: 'http://localhost/api/users/2'
+        description: ''
+        required: false
+        example: rem
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 1
+      'http://localhost/api/users/2': rem
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "success": true,
+               "data": {
+                   "id": 2,
+                   "email": "lsd@plums.com",
+                   "email_verified_at": null,
+                   "profile": {
+                       "given_name": "Alice",
+                       "family_name": "Dee",
+                       "city": "Sacramento",
+                       "country": "USA",
+                       "created_at": "2023-01-07T12:59:56.000000Z",
+                       "updated_at": "2023-01-07T12:59:56.000000Z"
+                   }
+               },
+           "message": "User #2 retrieved"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PATCH
+    uri: 'api/users/{id}'
+    metadata:
+      groupName: UserAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Attribute-update of the properties of a User in the API'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      'http://localhost/api/users/7':
+        name: 'http://localhost/api/users/7'
+        description: ''
+        required: false
+        example: ea
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 1
+      'http://localhost/api/users/7': ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: ''
+        required: false
+        example: alex@georgemail.com
+        type: string
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: false
+        example: secure1234
+        type: string
+        custom: []
+    cleanBodyParameters:
+      email: alex@georgemail.com
+      password: secure1234
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "success": true,
+               "data": {
+                   "id": 7,
+                   "email": "alex@georgemail.com",
+                   "email_verified_at": null,
+                   "profile": {
+                       "country": "AUS",
+                       "updated_at": "2023-01-29T05:37:13.000000Z",
+                       "created_at": "2023-01-29T05:37:13.000000Z"
+                       },
+                   "created_at": "2023-01-29T05:07:15.000000Z",
+                   "updated_at": "2023-01-29T05:37:13.000000Z"
+               },
+           "message": "User #7 updated successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/users/{id}'
+    metadata:
+      groupName: UserAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Block-update of all attributes in a user record'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      'http://localhost/api/users/3':
+        name: 'http://localhost/api/users/3'
+        description: ''
+        required: false
+        example: omnis
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 1
+      'http://localhost/api/users/3': omnis
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      given_name:
+        name: given_name
+        description: ''
+        required: false
+        example: Stevie
+        type: string
+        custom: []
+      family_name:
+        name: family_name
+        description: ''
+        required: false
+        example: Wonderful
+        type: string
+        custom: []
+      city:
+        name: city
+        description: ''
+        required: false
+        example: London
+        type: string
+        custom: []
+      country:
+        name: country
+        description: ''
+        required: false
+        example: GBR
+        type: string
+        custom: []
+      email:
+        name: email
+        description: ''
+        required: false
+        example: stevelives@home.com
+        type: string
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: false
+        example: password1234
+        type: string
+        custom: []
+    cleanBodyParameters:
+      given_name: Stevie
+      family_name: Wonderful
+      city: London
+      country: GBR
+      email: stevelives@home.com
+      password: password1234
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "success": true,
+               "data": {
+                   "id": 3,
+                   "email": "stevelives@home.com",
+                   "email_verified_at": null,
+                   "profile": {
+                       "country": "GBR",
+                       "updated_at": "2023-01-29T05:43:17.000000Z",
+                       "created_at": "2023-01-29T05:43:17.000000Z",
+                       "given_name": "Stevie",
+                       "family_name": "Wonderful",
+                       "city": "London"
+                   },
+                   "created_at": "2023-01-29T05:00:38.000000Z",
+                   "updated_at": "2023-01-29T05:43:17.000000Z"
+               },
+           "message": "User #3 updated successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -1,0 +1,241 @@
+name: LevelAPI
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/levels
+    metadata:
+      groupName: LevelAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a list of the AQF levels in the API'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      'http://localhost/api/levels/':
+        name: 'http://localhost/api/levels/'
+        description: ''
+        required: false
+        example: soluta
+        type: string
+        custom: []
+    cleanUrlParameters:
+      'http://localhost/api/levels/': soluta
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      page:
+        name: page
+        description: ''
+        required: false
+        example: 2
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: ''
+        required: false
+        example: 3
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      page: 2
+      per_page: 3
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"success":true,"data":{"current_page":2,"data":[{"id":4,"AQF_level":4,"title":"Certificate IV","description":"Graduates at this level will have a broad range of cognitive, technical and communication skills to select and apply a range of methods, tools, materials and information.","created_at":"2023-01-29T05:00:38.000000Z","updated_at":"2023-01-29T05:00:38.000000Z","deleted_at":null},{"id":5,"AQF_level":5,"title":"Diploma","description":"Graduates at this level will apply knowledge and skills to demonstrate autonomy, judgement and defined responsibility in known or changing contexts and within broad but established parameters.","created_at":"2023-01-29T05:00:38.000000Z","updated_at":"2023-01-29T05:00:38.000000Z","deleted_at":null},{"id":6,"AQF_level":6,"title":"Advanced Diploma","description":"Graduates at this level will have a broad range of cognitive, technical and communication skills to select and apply methods and technologies.","created_at":"2023-01-29T05:00:38.000000Z","updated_at":"2023-01-29T05:00:38.000000Z","deleted_at":null}],"first_page_url":"http:\/\/localhost\/api\/levels?page=1","from":4,"last_page":4,"last_page_url":"http:\/\/localhost\/api\/levels?page=4","links":[{"url":"http:\/\/localhost\/api\/levels?page=1","label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/levels?page=1","label":"1","active":false},{"url":"http:\/\/localhost\/api\/levels?page=2","label":"2","active":true},{"url":"http:\/\/localhost\/api\/levels?page=3","label":"3","active":false},{"url":"http:\/\/localhost\/api\/levels?page=4","label":"4","active":false},{"url":"http:\/\/localhost\/api\/levels?page=3","label":"Next &raquo;","active":false}],"next_page_url":"http:\/\/localhost\/api\/levels?page=3","path":"http:\/\/localhost\/api\/levels","per_page":3,"prev_page_url":"http:\/\/localhost\/api\/levels?page=1","to":6,"total":10},"message":"Total of 3 AQF Levels retrieved"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '57'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/levels/search
+    metadata:
+      groupName: LevelAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Search for AQF level records where title or description field matches search term'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      'http://localhost/api/levels/search':
+        name: 'http://localhost/api/levels/search'
+        description: ''
+        required: false
+        example: natus
+        type: string
+        custom: []
+    cleanUrlParameters:
+      'http://localhost/api/levels/search': natus
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      search:
+        name: search
+        description: 'Must not be greater than  64 characters.'
+        required: true
+        example: xeqkpyllljmkje
+        type: string
+        custom: []
+    cleanBodyParameters:
+      search: xeqkpyllljmkje
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "success": true,
+               "data": [{
+                   "id": 5,
+                   "AQF_level": 5,
+                   "title": "Diploma",
+                   "description": "Graduates at this level will apply knowledge and skills to demonstrate autonomy, judgement and defined responsibility in known or changing contexts and within broad but established parameters.",
+                   "created_at": "2023-01-10T08:25:27.000000Z",
+                   "updated_at": "2023-01-10T08:25:27.000000Z",
+                   "deleted_at": null
+               },
+               {
+                   "id": 6,
+                   "AQF_level": 6,
+                   "title": "Advanced Diploma",
+                   "description": "Graduates at this level will have a broad range of cognitive, technical and communication skills to select and apply methods and technologies.",
+                   "created_at": "2023-01-10T08:25:27.000000Z",
+                   "updated_at": "2023-01-10T08:25:27.000000Z",
+                   "deleted_at": null
+               }],
+            "message": "2 matching Levels retrieved"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/levels/{id}'
+    metadata:
+      groupName: LevelAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display data on an AQF level in the API'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the level.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      'http://localhost/api/levels/6':
+        name: 'http://localhost/api/levels/6'
+        description: ''
+        required: false
+        example: rem
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 1
+      'http://localhost/api/levels/6': rem
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "success": true,
+               "data": {
+                   "id": 1,
+                   "AQF_level": 1,
+                   "title": "Certificate I",
+                   "description": "Graduates at this level will apply knowledge and skills to demonstrate autonomy in highly structured and stable contexts and within narrow parameters.",
+                   "created_at": "2023-01-06T23:12:08.000000Z",
+                   "updated_at": "2023-01-06T23:12:08.000000Z",
+                   "deleted_at": null,
+                   "quizzes": [{
+                       "id": 1,
+                       "title": "Quiz One",
+                       "description": "BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES",
+                       "question_set": "[1, 4, 7, 9]",
+                       "level_id": 1,
+                       "field_id": 2,
+                       "skill_id": 11,
+                       "is_available": 1,
+                       "prepared_by": 1,
+                       "times_attempted": 9,
+                       "fastest_time": "00:03:45",
+                       "average_time": "00:05:00",
+                       "created_at": "2023-01-06T23:12:08.000000Z",
+                       "updated_at": "2023-01-06T23:12:08.000000Z",
+                       "deleted_at": null
+                   },
+                   {
+                       "id": 2,
+                       "title": "Quiz Two",
+                       "description": "BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES",
+                       "question_set": "[1, 3, 5, 6]",
+                       "level_id": 1,
+                       "field_id": 7,
+                       "skill_id": 5,
+                       "is_available": 1,
+                       "prepared_by": 1,
+                       "times_attempted": 12,
+                       "fastest_time": "00:03:45",
+                       "average_time": "00:05:00",
+                       "created_at": "2023-01-06T23:12:08.000000Z",
+                       "updated_at": "2023-01-06T23:12:08.000000Z",
+                       "deleted_at": null
+                   }
+               ]},
+            "message": "AQF Level #1 retrieved"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

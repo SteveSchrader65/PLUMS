@@ -1,0 +1,562 @@
+name: FieldAPI
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/fields
+    metadata:
+      groupName: FieldAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a list of study-fields in the API'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      'http://localhost/api/fields/':
+        name: 'http://localhost/api/fields/'
+        description: ''
+        required: false
+        example: esse
+        type: string
+        custom: []
+    cleanUrlParameters:
+      'http://localhost/api/fields/': esse
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      page:
+        name: page
+        description: ''
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: ''
+        required: false
+        example: 5
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      page: 1
+      per_page: 5
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"success":true,"data":{"current_page":1,"data":[{"id":1,"name":"Aerospace, Maritime and Logistics","description":"With the uptake of online shopping, supply chain has become the major conduit to fulfil the transfer of global goods and services. You could become a valuable part in an evolving industry by gaining the necessary skills for working in the supply chain industry.","created_at":"2023-01-29T05:00:38.000000Z","updated_at":"2023-01-29T05:00:38.000000Z","deleted_at":null},{"id":2,"name":"Agricultural Science and the Environment","description":"Learn aspects of working in a nursery and with plant propagation. This skill set will give you the skills and knowledge for entry level employment in a nursery centre and covers basic nursery preparation skills for plant propagation and care for nursery plants. It is suitable for anyone wishing to work in Horticulture industry.","created_at":"2023-01-29T05:00:38.000000Z","updated_at":"2023-01-29T05:00:38.000000Z","deleted_at":null},{"id":3,"name":"Automotive","description":"Gear up for a career in the automotive industry. This area has courses spanning from our pre-apprenticeship course - where you will gain the skills to become an apprentice mechanic - through to courses covering the requirements for you to upskill your career into the Airconditioning, Electrical, Servicing and Trimming branches of the industry.","created_at":"2023-01-29T05:00:38.000000Z","updated_at":"2023-01-29T05:00:38.000000Z","deleted_at":null},{"id":4,"name":"Building and Construction","description":"Build your career from the ground up with courses from Bricklaying, Plastering, Carpentry and Decorating to the basics of Architectural Design and Construction. Work as a builder or manager of a small to medium building business dealing with low-rise residential and commercial construction projects. Learn to plan and supervise construction projects and prepare, cost and schedule contracts.","created_at":"2023-01-29T05:00:38.000000Z","updated_at":"2023-01-29T05:00:38.000000Z","deleted_at":null},{"id":5,"name":"Business and Finance","description":"Account for your future by gaining the skills necessary to manage your own business; or learn the principles of Bookkeeping, Account Management and Data Analysis to begin your climb of the corporate ladder in a range of industries. You''ll learn how to set up and maintain computerised accounts, establish payroll systems, maintain inventory records, prepare financial reports prepare and lodge business and instalment activity statements and provide advice to taxpayers in relation to activity statements.","created_at":"2023-01-29T05:00:38.000000Z","updated_at":"2023-01-29T05:00:38.000000Z","deleted_at":null}],"first_page_url":"http:\/\/localhost\/api\/fields?page=1","from":1,"last_page":3,"last_page_url":"http:\/\/localhost\/api\/fields?page=3","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/fields?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/fields?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/fields?page=3","label":"3","active":false},{"url":"http:\/\/localhost\/api\/fields?page=2","label":"Next &raquo;","active":false}],"next_page_url":"http:\/\/localhost\/api\/fields?page=2","path":"http:\/\/localhost\/api\/fields","per_page":5,"prev_page_url":null,"to":5,"total":13},"message":"Total of 5 Study-fields retrieved"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '58'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/fields/search
+    metadata:
+      groupName: FieldAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Search for study-field records where name or description field matches search term'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      'http://localhost/api/fields/search':
+        name: 'http://localhost/api/fields/search'
+        description: ''
+        required: false
+        example: deleniti
+        type: string
+        custom: []
+    cleanUrlParameters:
+      'http://localhost/api/fields/search': deleniti
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      search:
+        name: search
+        description: 'Must not be greater than  64 characters.'
+        required: true
+        example: lbbrwcxrwzuzpqsgfpyaolwna
+        type: string
+        custom: []
+    cleanBodyParameters:
+      search: lbbrwcxrwzuzpqsgfpyaolwna
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "success": true,
+               "data": [{
+                   "id": 4,
+                   "name": "Building and Construction",
+                   "description": "Build your career from the ground up with courses from Bricklaying, Plastering, Carpentry and Decorating to the basics of Architectural Design and Construction. Work as a builder or manager of a small to medium building business dealing with low-rise residential and commercial construction projects. Learn to plan and supervise construction projects and prepare, cost and schedule contracts.",
+                   "created_at": "2023-01-10T08:25:26.000000Z",
+                   "updated_at": "2023-01-10T08:25:26.000000Z",
+                   "deleted_at": null
+               },
+               {
+                   "id": 6,
+                   "name": "Creative Industries",
+                   "description": "Design your career in the creative and cultural heart of the city. North Metro TAFE has a well established fashion department offering a stimulating design space that combines creativity with the underpinning practical skills necessary for success in an exciting and challenging industry.",
+                   "created_at": "2023-01-10T08:25:26.000000Z",
+                   "updated_at": "2023-01-10T08:25:26.000000Z",
+                   "deleted_at": null
+               },
+               {
+                   "id": 8,
+                   "name": "Engineering",
+                   "description": "Whether you are upskilling or looking for a career change, these courses will give you the drafting skills to work in the Mechanical Engineering and Drafting sector. The Mechanical Engineering Drafting Skill Set will equip you with the skills needed to use AutoCAD to complete mechanical engineering design drawings for CNC processes in manufacturing. Or take our courses in Advanced Welding with specializations in Manual Metal Arc and Gas Tungsten Arc Welding skill sets.",
+                   "created_at": "2023-01-10T08:25:26.000000Z",
+                   "updated_at": "2023-01-10T08:25:26.000000Z",
+                   "deleted_at": null
+               }],
+            "message": "3 matching Study-fields retrieved"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/fields/{id}'
+    metadata:
+      groupName: FieldAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display data on a study-field record'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the field.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      'http://localhost/api/fields/2':
+        name: 'http://localhost/api/fields/2'
+        description: ''
+        required: false
+        example: omnis
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 1
+      'http://localhost/api/fields/2': omnis
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "success": true,
+               "data": {
+                   "id": 5,
+                   "name": "Business and Finance",
+                   "description": "Account for your future by gaining the skills necessary to manage your own business; or learn the principles of Bookkeeping, Account Management and Data Analysis to begin your climb of the corporate ladder in a range of industries. You'll learn how to set up and maintain computerised accounts, establish payroll systems, maintain inventory records, prepare financial reports prepare and lodge business and instalment activity statements and provide advice to taxpayers in relation to activity statements.",
+                   "created_at": "2023-01-13T12:17:38.000000Z",
+                   "updated_at": "2023-01-13T12:17:38.000000Z",
+                   "deleted_at": null,
+                   "skills": [{
+                       "id": 8,
+                       "name": "Accountancy",
+                       "description": "ENTER DESCRIPTION HERE",
+                       "field_id": 5,
+                       "created_at": "2023-01-13T12:17:39.000000Z",
+                       "updated_at": "2023-01-13T12:17:39.000000Z",
+                       "deleted_at": null
+                   },
+                   {
+                       "id": 10,
+                       "name": "Finance Management",
+                       "description": "ENTER DESCRIPTION HERE",
+                       "field_id": 5,
+                       "created_at": "2023-01-13T12:17:39.000000Z",
+                       "updated_at": "2023-01-13T12:17:39.000000Z",
+                       "deleted_at": null
+                   },
+                   {
+                       "id": 11,
+                       "name": "Business Management",
+                       "description": "ENTER DESCRIPTION HERE",
+                       "field_id": 5,
+                       "created_at": "2023-01-13T12:17:39.000000Z",
+                       "updated_at": "2023-01-13T12:17:39.000000Z",
+                       "deleted_at": null
+                   }],
+                   "quizzes": [{
+                       "id": 1,
+                       "title": "Quiz One",
+                       "description": "Quiz 1 will test your knowledge of programming at an intermediate level.",
+                       "question_set": "[1, 4, 7, 9]",
+                       "level_id": 1,
+                       "field_id": 2,
+                       "skill_id": 11,
+                       "is_available": 1,
+                       "prepared_by": 1,
+                       "times_attempted": 0,
+                       "fastest_time": "00:00:00",
+                       "average_time": "00:00:00",
+                       "created_at": "2023-01-13T12:17:39.000000Z",
+                       "updated_at": "2023-01-13T12:17:39.000000Z",
+                       "deleted_at": null,
+                       "laravel_through_key": 5
+                   },
+                   {
+                       "id": 3,
+                       "title": "Quiz Three",
+                       "description": "BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES",
+                       "question_set": "[2, 3, 7, 8]",
+                       "level_id": 5,
+                       "field_id": 4,
+                       "skill_id": 11,
+                       "is_available": 1,
+                       "prepared_by": 1,
+                       "times_attempted": 0,
+                       "fastest_time": "00:00:00",
+                       "average_time": "00:00:00",
+                       "created_at": "2023-01-13T12:17:39.000000Z",
+                       "updated_at": "2023-01-13T12:17:39.000000Z",
+                       "deleted_at": null,
+                       "laravel_through_key": 5
+                   }]
+               },
+           "message": "Study-field #5 retrieved"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/fields
+    metadata:
+      groupName: FieldAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a new study-field in the API'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      'http://localhost/api/fields/':
+        name: 'http://localhost/api/fields/'
+        description: ''
+        required: false
+        example: molestiae
+        type: string
+        custom: []
+    cleanUrlParameters:
+      'http://localhost/api/fields/': molestiae
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: false
+        example: Astrophysics
+        type: string
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'The science dealing with the movement of heavenly bodies.'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: Astrophysics
+      description: 'The science dealing with the movement of heavenly bodies.'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "success": true,
+               "data": {
+               "name": "Astrophysics",
+               "description": "The science dealing with the movement of heavenly bodies.",
+               "updated_at": "2023-01-11T09:00:49.000000Z",
+               "created_at": "2023-01-11T09:00:49.000000Z",
+               "id": 13
+             },
+          "message": "New Field #13 created successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PATCH
+    uri: 'api/fields/{id}'
+    metadata:
+      groupName: FieldAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Attribute-update of the properties of a Field in the API'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the field.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      'http://localhost/api/fields/5':
+        name: 'http://localhost/api/fields/5'
+        description: ''
+        required: false
+        example: culpa
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 1
+      'http://localhost/api/fields/5': culpa
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: false
+        example: 'Criminal Services'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: 'Criminal Services'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "success": true,
+               "data": {
+                   "id": 7,
+                   "name": "Criminal Services",
+                   "description": "Just some text that has been made up.",
+                   "created_at": "2023-01-14T22:58:44.000000Z",
+                   "updated_at": "2023-01-15T05:52:20.000000Z",
+                   "deleted_at": null
+               },
+           "message": "Field #7 updated successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/fields/{id}'
+    metadata:
+      groupName: FieldAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Block-update of all attributes of a study-field record in the API'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the field.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      'http://localhost/api/fields/7':
+        name: 'http://localhost/api/fields/7'
+        description: ''
+        required: false
+        example: reprehenderit
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 1
+      'http://localhost/api/fields/7': reprehenderit
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: false
+        example: 'Criminal Services'
+        type: string
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Just some text that has been made up.'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: 'Criminal Services'
+      description: 'Just some text that has been made up.'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "success": true,
+               "data": {
+                   "id": 7,
+                   "name": "Criminal Services",
+                   "description": "Just some text that has been made up.",
+                   "created_at": "2023-01-13T12:17:38.000000Z",
+                   "updated_at": "2023-01-13T15:55:35.000000Z",
+                   "deleted_at": null
+               },
+           "message": "Field #7 updated successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/fields/{id}'
+    metadata:
+      groupName: FieldAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mark a study-field record for deletion from storage (soft delete)'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the field.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      'http://localhost/api/fields/5':
+        name: 'http://localhost/api/fields/5'
+        description: ''
+        required: false
+        example: maiores
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 1
+      'http://localhost/api/fields/5': maiores
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "success": true,
+               "data": {
+                   "id": 5,
+                   "name": "Business and Finance",
+                   "description": "Account for your future by gaining the skills necessary to manage your own business; or learn the principles of Bookkeeping, Account Management and Data Analysis to begin your climb of the corporate ladder in a range of industries. You'll learn how to set up and maintain computerised accounts, establish payroll systems, maintain inventory records, prepare financial reports prepare and lodge business and instalment activity statements and provide advice to taxpayers in relation to activity statements.",
+                   "created_at": "2023-01-12T07:52:18.000000Z",
+                   "updated_at": "2023-01-12T08:39:13.000000Z",
+                   "deleted_at": "2023-01-12T08:39:13.000000Z"
+               },
+           "message": "Field #5 has been marked for deletion"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

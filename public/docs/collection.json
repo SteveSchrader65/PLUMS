@@ -1,0 +1,2780 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "f0c2e1fe-39a7-4f80-b6a7-9a23c9e7b150",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "AnswerAPI",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a list of answers to questions in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/answers",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/answers",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/answers\/",
+                                    "key": "http:\/\/localhost\/api\/answers\/",
+                                    "value": "omnis",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"page\":1,\"per_page\":4}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"current_page\":1,\"data\":[{\"id\":1,\"answer_text\":\"OOP stands for Object-Oriented Programming\",\"is_correct\":1,\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null},{\"id\":2,\"answer_text\":\"MetaverseQL\",\"is_correct\":0,\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null},{\"id\":3,\"answer_text\":\"The domain is the core business of the client\",\"is_correct\":1,\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null},{\"id\":4,\"answer_text\":\"OOP places heavy emphasis on modularised coding\",\"is_correct\":1,\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null}],\"first_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/answers?page=1\",\"from\":1,\"last_page\":9,\"last_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/answers?page=9\",\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/answers?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/answers?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/answers?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/answers?page=4\",\"label\":\"4\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/answers?page=5\",\"label\":\"5\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/answers?page=6\",\"label\":\"6\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/answers?page=7\",\"label\":\"7\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/answers?page=8\",\"label\":\"8\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/answers?page=9\",\"label\":\"9\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/answers?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/answers?page=2\",\"path\":\"http:\\\/\\\/localhost\\\/api\\\/answers\",\"per_page\":4,\"prev_page_url\":null,\"to\":4,\"total\":33},\"message\":\"Total of 4 Answers retrieved\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Search for answers where text field matches search term",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/answers\/search",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/answers\/search",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/answers\/search",
+                                    "key": "http:\/\/localhost\/api\/answers\/search",
+                                    "value": "voluptas",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"search\":\"qxfusdjghccgpxzfvqpqgiwrt\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": [{\n         \"id\": 1,\n         \"answer_text\": \"OOP stands for Object-Oriented Programming\",\n         \"is_correct\": 1,\n         \"created_at\": \"2023-01-10T08:25:27.000000Z\",\n         \"updated_at\": \"2023-01-10T08:25:27.000000Z\",\n         \"deleted_at\": null\n     },\n     {\n         \"id\": 4,\n         \"answer_text\": \"OOP places heavy emphasis on modularised coding\",\n         \"is_correct\": 1,\n         \"created_at\": \"2023-01-10T08:25:27.000000Z\",\n         \"updated_at\": \"2023-01-10T08:25:27.000000Z\",\n         \"deleted_at\": null\n     },\n     {\n         \"id\": 9,\n         \"answer_text\": \"OOP uses classes, methods and properties\",\n         \"is_correct\": 1,\n         \"created_at\": \"2023-01-10T08:25:27.000000Z\",\n         \"updated_at\": \"2023-01-10T08:25:27.000000Z\",\n         \"deleted_at\": null\n     },\n     {\n         \"id\": 14,\n         \"answer_text\": \"OOP places heavy emphasis on functional coding\",\n         \"is_correct\": 0,\n         \"created_at\": \"2023-01-10T08:25:27.000000Z\",\n         \"updated_at\": \"2023-01-10T08:25:27.000000Z\",\n         \"deleted_at\": null\n     },\n     {\n         \"id\": 16,\n         \"answer_text\": \"OOP stands for Optional-Object Progression\",\n         \"is_correct\": 0,\n         \"created_at\": \"2023-01-10T08:25:27.000000Z\",\n         \"updated_at\": \"2023-01-10T08:25:27.000000Z\",\n         \"deleted_at\": null\n     }],\n   \"message\": \"5 matching Answers retrieved\"\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display data on an answer in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/answers\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/answers\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the answer."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/answers\/8",
+                                    "key": "http:\/\/localhost\/api\/answers\/8",
+                                    "value": "pariatur",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 8,\n         \"answer_text\": \"Heavy Traffic Transport Packaging System\",\n         \"is_correct\": 0,\n         \"created_at\": \"2023-01-06T23:12:08.000000Z\",\n         \"updated_at\": \"2023-01-06T23:12:08.000000Z\",\n         \"deleted_at\": null\n     },\n \"message\": \"Answer #8 retrieved\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create a new answer in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/answers",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/answers",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/answers\/",
+                                    "key": "http:\/\/localhost\/api\/answers\/",
+                                    "value": "et",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"answer_text\":\"Forty-two\",\"is_correct\":true,\"???\":14}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"answer_text\": \"Forty-four\",\n         \"is_correct\": \"1\",\n         \"updated_at\": \"2023-01-11T08:47:45.000000Z\",\n         \"created_at\": \"2023-01-11T08:47:45.000000Z\",\n         \"id\": 31\n     },\n \"message\": \"New Answer #31 created successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Attribute-update of the properties of an Answer in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/answers\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/answers\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the answer."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/answers\/32",
+                                    "key": "http:\/\/localhost\/api\/answers\/32",
+                                    "value": "omnis",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"answer_text\":\"Forty-three\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 32,\n         \"answer_text\": \"Forty-three\",\n         \"created_at\": \"2023-01-14T23:06:21.000000Z\",\n         \"updated_at\": \"2023-01-15T05:21:14.000000Z\",\n         \"deleted_at\": null\n     },\n \"message\": \"Answer #32 updated successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Block-update of all attributes of an answer in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/answers\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/answers\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the answer."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/answers\/32",
+                                    "key": "http:\/\/localhost\/api\/answers\/32",
+                                    "value": "vel",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"answer_text\":\"Forty-three\",\"is_correct\":false}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 32,\n         \"answer_text\": \"Forty-two\",\n         \"is_correct\": \"1\",\n         \"created_at\": \"2023-01-13T13:04:31.000000Z\",\n         \"updated_at\": \"2023-01-13T15:50:00.000000Z\",\n         \"deleted_at\": null\n     },\n \"message\": \"Answer #32 updated successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Mark an answer record for deletion from storage (soft delete)",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/answers\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/answers\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the answer."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/answers\/3",
+                                    "key": "http:\/\/localhost\/api\/answers\/3",
+                                    "value": "quo",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 3,\n         \"answer_text\": \"The domain is the core business of the client\",\n         \"is_correct\": 1,\n         \"created_at\": \"2023-01-12T07:52:18.000000Z\",\n         \"updated_at\": \"2023-01-12T08:36:22.000000Z\",\n         \"deleted_at\": \"2023-01-12T08:36:22.000000Z\"\n     },\n \"message\": \"Answer #3 has been marked for deletion\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "AuthAPI",
+            "description": "",
+            "item": [
+                {
+                    "name": "Authorize log-in attempt and provide access token",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/login",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/users\/",
+                                    "key": "http:\/\/localhost\/api\/users\/",
+                                    "value": "iusto",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"phil@georgemail.com\",\"password\":\"Passwerd1234\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"access_token\": \"1|DMBY2ExTjNoAtTtFP8mTM6mZATcMRkgMiqHg511E\",\n     \"token_type\": \"Bearer\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Register a new user and provide access token",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/register",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/users\/",
+                                    "key": "http:\/\/localhost\/api\/users\/",
+                                    "value": "occaecati",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"phil@georgemail.com\",\"password\":\"Passwerd1234\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"access_token\": \"3|LqivO8LnSBdUkZcPLeCl0oa8gT7NgbSEL5Wnafen\",\n     \"token_type\": \"Bearer\"\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Log user out of system",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/logout",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/logout",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/logout",
+                                    "key": "http:\/\/localhost\/api\/logout",
+                                    "value": "officiis",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"message\": \"You are now logged-out\"\n }",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "CountryAPI",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a list of available countries in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/countries",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/countries",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/countries\/",
+                                    "key": "http:\/\/localhost\/api\/countries\/",
+                                    "value": "est",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"page\":1,\"per_page\":5}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "52"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"current_page\":1,\"data\":[{\"id\":4,\"name\":\"Afghanistan\",\"code_2\":\"AF\",\"code_3\":\"AFG\",\"created_at\":\"2023-01-29T05:00:37.000000Z\",\"updated_at\":\"2023-01-29T05:00:37.000000Z\"},{\"id\":8,\"name\":\"Albania\",\"code_2\":\"AL\",\"code_3\":\"ALB\",\"created_at\":\"2023-01-29T05:00:37.000000Z\",\"updated_at\":\"2023-01-29T05:00:37.000000Z\"},{\"id\":12,\"name\":\"Algeria\",\"code_2\":\"DZ\",\"code_3\":\"DZA\",\"created_at\":\"2023-01-29T05:00:37.000000Z\",\"updated_at\":\"2023-01-29T05:00:37.000000Z\"},{\"id\":16,\"name\":\"American Samoa\",\"code_2\":\"AS\",\"code_3\":\"ASM\",\"created_at\":\"2023-01-29T05:00:37.000000Z\",\"updated_at\":\"2023-01-29T05:00:37.000000Z\"},{\"id\":20,\"name\":\"Andorra\",\"code_2\":\"AD\",\"code_3\":\"AND\",\"created_at\":\"2023-01-29T05:00:37.000000Z\",\"updated_at\":\"2023-01-29T05:00:37.000000Z\"}],\"first_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/countries?page=1\",\"from\":1,\"last_page\":46,\"last_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/countries?page=46\",\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/countries?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/countries?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/countries?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/countries?page=4\",\"label\":\"4\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/countries?page=5\",\"label\":\"5\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/countries?page=6\",\"label\":\"6\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/countries?page=7\",\"label\":\"7\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/countries?page=8\",\"label\":\"8\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/countries?page=9\",\"label\":\"9\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/countries?page=10\",\"label\":\"10\",\"active\":false},{\"url\":null,\"label\":\"...\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/countries?page=45\",\"label\":\"45\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/countries?page=46\",\"label\":\"46\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/countries?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/countries?page=2\",\"path\":\"http:\\\/\\\/localhost\\\/api\\\/countries\",\"per_page\":5,\"prev_page_url\":null,\"to\":5,\"total\":228},\"message\":\"Total of 5 Countries retrieved\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Search for Country records where name or country code field matches search term",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/countries\/search",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/countries\/search",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/countries\/search",
+                                    "key": "http:\/\/localhost\/api\/countries\/search",
+                                    "value": "voluptatem",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"search\":\"wsyutjwobts\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": [{\n         \"id\": 36,\n         \"name\": \"Australia\",\n         \"code_2\": \"AU\",\n         \"code_3\": \"AUS\",\n         \"created_at\": \"2023-01-16T12:13:28.000000Z\",\n         \"updated_at\": \"2023-01-16T12:13:28.000000Z\"\n     },\n     {\n         \"id\": 40,\n         \"name\": \"Austria\",\n         \"code_2\": \"AT\",\n         \"code_3\": \"AUT\",\n         \"created_at\": \"2023-01-16T12:13:28.000000Z\",\n         \"updated_at\": \"2023-01-16T12:13:28.000000Z\"\n     }],\n \"message\": \"2 matching Countries retrieved\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display data on a Country in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/countries\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/countries\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "4",
+                                    "description": "The ID of the country."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/countries\/100",
+                                    "key": "http:\/\/localhost\/api\/countries\/100",
+                                    "value": "dolorem",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 100,\n         \"name\": \"Bulgaria\",\n         \"code_2\": \"BG\",\n         \"code_3\": \"BGR\",\n         \"created_at\": \"2023-01-16T12:13:28.000000Z\",\n         \"updated_at\": \"2023-01-16T12:13:28.000000Z\"\n     },\n \"message\": \"Country #100 retrieved\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/health",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/health",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/health"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "must-revalidate, no-cache, no-store, post-check=0, pre-check=0, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "51"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"finishedAt\":1674996975,\"checkResults\":[{\"name\":\"CpuLoad\",\"label\":\"Cpu Load\",\"notificationMessage\":\"\",\"shortSummary\":\"0.2841796875 0.10546875 0.08935546875\",\"status\":\"ok\",\"meta\":{\"last_minute\":0.2841796875,\"last_5_minutes\":0.10546875,\"last_15_minutes\":0.08935546875}},{\"name\":\"Database\",\"label\":\"Database\",\"notificationMessage\":\"\",\"shortSummary\":\"Ok\",\"status\":\"ok\",\"meta\":{\"connection_name\":\"mysql\"}},{\"name\":\"UsedDiskSpace\",\"label\":\"Used Disk Space\",\"notificationMessage\":\"\",\"shortSummary\":\"11%\",\"status\":\"ok\",\"meta\":{\"disk_space_used_percentage\":11}}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "The Fallback controller overrides the 404 Not found error and replaces it with the defined error message",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/:fallbackPlaceholder",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/:fallbackPlaceholder",
+                            "variable": [
+                                {
+                                    "id": "fallbackPlaceholder",
+                                    "key": "fallbackPlaceholder",
+                                    "value": "6%3EtdiG",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "50"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 404,
+                            "body": "{\"success\":false,\"message\":\"Page not found. If error persists, contact J294862@tafe.wa.edu.au\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "FieldAPI",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a list of study-fields in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/fields",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/fields",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/fields\/",
+                                    "key": "http:\/\/localhost\/api\/fields\/",
+                                    "value": "esse",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"page\":1,\"per_page\":5}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "58"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"current_page\":1,\"data\":[{\"id\":1,\"name\":\"Aerospace, Maritime and Logistics\",\"description\":\"With the uptake of online shopping, supply chain has become the major conduit to fulfil the transfer of global goods and services. You could become a valuable part in an evolving industry by gaining the necessary skills for working in the supply chain industry.\",\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null},{\"id\":2,\"name\":\"Agricultural Science and the Environment\",\"description\":\"Learn aspects of working in a nursery and with plant propagation. This skill set will give you the skills and knowledge for entry level employment in a nursery centre and covers basic nursery preparation skills for plant propagation and care for nursery plants. It is suitable for anyone wishing to work in Horticulture industry.\",\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null},{\"id\":3,\"name\":\"Automotive\",\"description\":\"Gear up for a career in the automotive industry. This area has courses spanning from our pre-apprenticeship course - where you will gain the skills to become an apprentice mechanic - through to courses covering the requirements for you to upskill your career into the Airconditioning, Electrical, Servicing and Trimming branches of the industry.\",\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null},{\"id\":4,\"name\":\"Building and Construction\",\"description\":\"Build your career from the ground up with courses from Bricklaying, Plastering, Carpentry and Decorating to the basics of Architectural Design and Construction. Work as a builder or manager of a small to medium building business dealing with low-rise residential and commercial construction projects. Learn to plan and supervise construction projects and prepare, cost and schedule contracts.\",\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null},{\"id\":5,\"name\":\"Business and Finance\",\"description\":\"Account for your future by gaining the skills necessary to manage your own business; or learn the principles of Bookkeeping, Account Management and Data Analysis to begin your climb of the corporate ladder in a range of industries. You'll learn how to set up and maintain computerised accounts, establish payroll systems, maintain inventory records, prepare financial reports prepare and lodge business and instalment activity statements and provide advice to taxpayers in relation to activity statements.\",\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null}],\"first_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/fields?page=1\",\"from\":1,\"last_page\":3,\"last_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/fields?page=3\",\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/fields?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/fields?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/fields?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/fields?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/fields?page=2\",\"path\":\"http:\\\/\\\/localhost\\\/api\\\/fields\",\"per_page\":5,\"prev_page_url\":null,\"to\":5,\"total\":13},\"message\":\"Total of 5 Study-fields retrieved\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Search for study-field records where name or description field matches search term",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/fields\/search",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/fields\/search",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/fields\/search",
+                                    "key": "http:\/\/localhost\/api\/fields\/search",
+                                    "value": "deleniti",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"search\":\"lbbrwcxrwzuzpqsgfpyaolwna\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": [{\n         \"id\": 4,\n         \"name\": \"Building and Construction\",\n         \"description\": \"Build your career from the ground up with courses from Bricklaying, Plastering, Carpentry and Decorating to the basics of Architectural Design and Construction. Work as a builder or manager of a small to medium building business dealing with low-rise residential and commercial construction projects. Learn to plan and supervise construction projects and prepare, cost and schedule contracts.\",\n         \"created_at\": \"2023-01-10T08:25:26.000000Z\",\n         \"updated_at\": \"2023-01-10T08:25:26.000000Z\",\n         \"deleted_at\": null\n     },\n     {\n         \"id\": 6,\n         \"name\": \"Creative Industries\",\n         \"description\": \"Design your career in the creative and cultural heart of the city. North Metro TAFE has a well established fashion department offering a stimulating design space that combines creativity with the underpinning practical skills necessary for success in an exciting and challenging industry.\",\n         \"created_at\": \"2023-01-10T08:25:26.000000Z\",\n         \"updated_at\": \"2023-01-10T08:25:26.000000Z\",\n         \"deleted_at\": null\n     },\n     {\n         \"id\": 8,\n         \"name\": \"Engineering\",\n         \"description\": \"Whether you are upskilling or looking for a career change, these courses will give you the drafting skills to work in the Mechanical Engineering and Drafting sector. The Mechanical Engineering Drafting Skill Set will equip you with the skills needed to use AutoCAD to complete mechanical engineering design drawings for CNC processes in manufacturing. Or take our courses in Advanced Welding with specializations in Manual Metal Arc and Gas Tungsten Arc Welding skill sets.\",\n         \"created_at\": \"2023-01-10T08:25:26.000000Z\",\n         \"updated_at\": \"2023-01-10T08:25:26.000000Z\",\n         \"deleted_at\": null\n     }],\n  \"message\": \"3 matching Study-fields retrieved\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display data on a study-field record",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/fields\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/fields\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the field."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/fields\/2",
+                                    "key": "http:\/\/localhost\/api\/fields\/2",
+                                    "value": "omnis",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 5,\n         \"name\": \"Business and Finance\",\n         \"description\": \"Account for your future by gaining the skills necessary to manage your own business; or learn the principles of Bookkeeping, Account Management and Data Analysis to begin your climb of the corporate ladder in a range of industries. You'll learn how to set up and maintain computerised accounts, establish payroll systems, maintain inventory records, prepare financial reports prepare and lodge business and instalment activity statements and provide advice to taxpayers in relation to activity statements.\",\n         \"created_at\": \"2023-01-13T12:17:38.000000Z\",\n         \"updated_at\": \"2023-01-13T12:17:38.000000Z\",\n         \"deleted_at\": null,\n         \"skills\": [{\n             \"id\": 8,\n             \"name\": \"Accountancy\",\n             \"description\": \"ENTER DESCRIPTION HERE\",\n             \"field_id\": 5,\n             \"created_at\": \"2023-01-13T12:17:39.000000Z\",\n             \"updated_at\": \"2023-01-13T12:17:39.000000Z\",\n             \"deleted_at\": null\n         },\n         {\n             \"id\": 10,\n             \"name\": \"Finance Management\",\n             \"description\": \"ENTER DESCRIPTION HERE\",\n             \"field_id\": 5,\n             \"created_at\": \"2023-01-13T12:17:39.000000Z\",\n             \"updated_at\": \"2023-01-13T12:17:39.000000Z\",\n             \"deleted_at\": null\n         },\n         {\n             \"id\": 11,\n             \"name\": \"Business Management\",\n             \"description\": \"ENTER DESCRIPTION HERE\",\n             \"field_id\": 5,\n             \"created_at\": \"2023-01-13T12:17:39.000000Z\",\n             \"updated_at\": \"2023-01-13T12:17:39.000000Z\",\n             \"deleted_at\": null\n         }],\n         \"quizzes\": [{\n             \"id\": 1,\n             \"title\": \"Quiz One\",\n             \"description\": \"Quiz 1 will test your knowledge of programming at an intermediate level.\",\n             \"question_set\": \"[1, 4, 7, 9]\",\n             \"level_id\": 1,\n             \"field_id\": 2,\n             \"skill_id\": 11,\n             \"is_available\": 1,\n             \"prepared_by\": 1,\n             \"times_attempted\": 0,\n             \"fastest_time\": \"00:00:00\",\n             \"average_time\": \"00:00:00\",\n             \"created_at\": \"2023-01-13T12:17:39.000000Z\",\n             \"updated_at\": \"2023-01-13T12:17:39.000000Z\",\n             \"deleted_at\": null,\n             \"laravel_through_key\": 5\n         },\n         {\n             \"id\": 3,\n             \"title\": \"Quiz Three\",\n             \"description\": \"BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES\",\n             \"question_set\": \"[2, 3, 7, 8]\",\n             \"level_id\": 5,\n             \"field_id\": 4,\n             \"skill_id\": 11,\n             \"is_available\": 1,\n             \"prepared_by\": 1,\n             \"times_attempted\": 0,\n             \"fastest_time\": \"00:00:00\",\n             \"average_time\": \"00:00:00\",\n             \"created_at\": \"2023-01-13T12:17:39.000000Z\",\n             \"updated_at\": \"2023-01-13T12:17:39.000000Z\",\n             \"deleted_at\": null,\n             \"laravel_through_key\": 5\n         }]\n     },\n \"message\": \"Study-field #5 retrieved\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create a new study-field in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/fields",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/fields",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/fields\/",
+                                    "key": "http:\/\/localhost\/api\/fields\/",
+                                    "value": "molestiae",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"Astrophysics\",\"description\":\"The science dealing with the movement of heavenly bodies.\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n     \"name\": \"Astrophysics\",\n     \"description\": \"The science dealing with the movement of heavenly bodies.\",\n     \"updated_at\": \"2023-01-11T09:00:49.000000Z\",\n     \"created_at\": \"2023-01-11T09:00:49.000000Z\",\n     \"id\": 13\n   },\n\"message\": \"New Field #13 created successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Attribute-update of the properties of a Field in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/fields\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/fields\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the field."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/fields\/5",
+                                    "key": "http:\/\/localhost\/api\/fields\/5",
+                                    "value": "culpa",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"Criminal Services\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 7,\n         \"name\": \"Criminal Services\",\n         \"description\": \"Just some text that has been made up.\",\n         \"created_at\": \"2023-01-14T22:58:44.000000Z\",\n         \"updated_at\": \"2023-01-15T05:52:20.000000Z\",\n         \"deleted_at\": null\n     },\n \"message\": \"Field #7 updated successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Block-update of all attributes of a study-field record in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/fields\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/fields\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the field."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/fields\/7",
+                                    "key": "http:\/\/localhost\/api\/fields\/7",
+                                    "value": "reprehenderit",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"Criminal Services\",\"description\":\"Just some text that has been made up.\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 7,\n         \"name\": \"Criminal Services\",\n         \"description\": \"Just some text that has been made up.\",\n         \"created_at\": \"2023-01-13T12:17:38.000000Z\",\n         \"updated_at\": \"2023-01-13T15:55:35.000000Z\",\n         \"deleted_at\": null\n     },\n \"message\": \"Field #7 updated successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Mark a study-field record for deletion from storage (soft delete)",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/fields\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/fields\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the field."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/fields\/5",
+                                    "key": "http:\/\/localhost\/api\/fields\/5",
+                                    "value": "maiores",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 5,\n         \"name\": \"Business and Finance\",\n         \"description\": \"Account for your future by gaining the skills necessary to manage your own business; or learn the principles of Bookkeeping, Account Management and Data Analysis to begin your climb of the corporate ladder in a range of industries. You'll learn how to set up and maintain computerised accounts, establish payroll systems, maintain inventory records, prepare financial reports prepare and lodge business and instalment activity statements and provide advice to taxpayers in relation to activity statements.\",\n         \"created_at\": \"2023-01-12T07:52:18.000000Z\",\n         \"updated_at\": \"2023-01-12T08:39:13.000000Z\",\n         \"deleted_at\": \"2023-01-12T08:39:13.000000Z\"\n     },\n \"message\": \"Field #5 has been marked for deletion\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "LevelAPI",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a list of the AQF levels in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/levels",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/levels",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/levels\/",
+                                    "key": "http:\/\/localhost\/api\/levels\/",
+                                    "value": "soluta",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"page\":2,\"per_page\":3}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "57"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"current_page\":2,\"data\":[{\"id\":4,\"AQF_level\":4,\"title\":\"Certificate IV\",\"description\":\"Graduates at this level will have a broad range of cognitive, technical and communication skills to select and apply a range of methods, tools, materials and information.\",\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null},{\"id\":5,\"AQF_level\":5,\"title\":\"Diploma\",\"description\":\"Graduates at this level will apply knowledge and skills to demonstrate autonomy, judgement and defined responsibility in known or changing contexts and within broad but established parameters.\",\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null},{\"id\":6,\"AQF_level\":6,\"title\":\"Advanced Diploma\",\"description\":\"Graduates at this level will have a broad range of cognitive, technical and communication skills to select and apply methods and technologies.\",\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null}],\"first_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/levels?page=1\",\"from\":4,\"last_page\":4,\"last_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/levels?page=4\",\"links\":[{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/levels?page=1\",\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/levels?page=1\",\"label\":\"1\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/levels?page=2\",\"label\":\"2\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/levels?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/levels?page=4\",\"label\":\"4\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/levels?page=3\",\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/levels?page=3\",\"path\":\"http:\\\/\\\/localhost\\\/api\\\/levels\",\"per_page\":3,\"prev_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/levels?page=1\",\"to\":6,\"total\":10},\"message\":\"Total of 3 AQF Levels retrieved\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Search for AQF level records where title or description field matches search term",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/levels\/search",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/levels\/search",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/levels\/search",
+                                    "key": "http:\/\/localhost\/api\/levels\/search",
+                                    "value": "natus",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"search\":\"xeqkpyllljmkje\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": [{\n         \"id\": 5,\n         \"AQF_level\": 5,\n         \"title\": \"Diploma\",\n         \"description\": \"Graduates at this level will apply knowledge and skills to demonstrate autonomy, judgement and defined responsibility in known or changing contexts and within broad but established parameters.\",\n         \"created_at\": \"2023-01-10T08:25:27.000000Z\",\n         \"updated_at\": \"2023-01-10T08:25:27.000000Z\",\n         \"deleted_at\": null\n     },\n     {\n         \"id\": 6,\n         \"AQF_level\": 6,\n         \"title\": \"Advanced Diploma\",\n         \"description\": \"Graduates at this level will have a broad range of cognitive, technical and communication skills to select and apply methods and technologies.\",\n         \"created_at\": \"2023-01-10T08:25:27.000000Z\",\n         \"updated_at\": \"2023-01-10T08:25:27.000000Z\",\n         \"deleted_at\": null\n     }],\n  \"message\": \"2 matching Levels retrieved\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display data on an AQF level in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/levels\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/levels\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the level."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/levels\/6",
+                                    "key": "http:\/\/localhost\/api\/levels\/6",
+                                    "value": "rem",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 1,\n         \"AQF_level\": 1,\n         \"title\": \"Certificate I\",\n         \"description\": \"Graduates at this level will apply knowledge and skills to demonstrate autonomy in highly structured and stable contexts and within narrow parameters.\",\n         \"created_at\": \"2023-01-06T23:12:08.000000Z\",\n         \"updated_at\": \"2023-01-06T23:12:08.000000Z\",\n         \"deleted_at\": null,\n         \"quizzes\": [{\n             \"id\": 1,\n             \"title\": \"Quiz One\",\n             \"description\": \"BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES\",\n             \"question_set\": \"[1, 4, 7, 9]\",\n             \"level_id\": 1,\n             \"field_id\": 2,\n             \"skill_id\": 11,\n             \"is_available\": 1,\n             \"prepared_by\": 1,\n             \"times_attempted\": 9,\n             \"fastest_time\": \"00:03:45\",\n             \"average_time\": \"00:05:00\",\n             \"created_at\": \"2023-01-06T23:12:08.000000Z\",\n             \"updated_at\": \"2023-01-06T23:12:08.000000Z\",\n             \"deleted_at\": null\n         },\n         {\n             \"id\": 2,\n             \"title\": \"Quiz Two\",\n             \"description\": \"BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES\",\n             \"question_set\": \"[1, 3, 5, 6]\",\n             \"level_id\": 1,\n             \"field_id\": 7,\n             \"skill_id\": 5,\n             \"is_available\": 1,\n             \"prepared_by\": 1,\n             \"times_attempted\": 12,\n             \"fastest_time\": \"00:03:45\",\n             \"average_time\": \"00:05:00\",\n             \"created_at\": \"2023-01-06T23:12:08.000000Z\",\n             \"updated_at\": \"2023-01-06T23:12:08.000000Z\",\n             \"deleted_at\": null\n         }\n     ]},\n  \"message\": \"AQF Level #1 retrieved\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "QuestionAPI",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a list of available questions to be used within PLUMS quizzes in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/questions",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/questions",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/questions\/",
+                                    "key": "http:\/\/localhost\/api\/questions\/",
+                                    "value": "rem",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"page\":2,\"per_page\":3}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "56"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"current_page\":2,\"data\":{\"0\":{\"id\":4,\"question_text\":\"Read the following definition carefully: Abstraction is the provision of essential information to the outside world, whilst hiding the details of how that data is stored and manipulated.\",\"answer_set\":\"[27, 30]\",\"points_value\":1,\"is_available\":0,\"written_by\":2,\"times_used\":0,\"times_answered_correctly\":0,\"times_answered_incorrectly\":0,\"answers\":null,\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null},\"1\":{\"id\":5,\"question_text\":\"Read the following definition carefully: Modularization is the capability to create a new class based upon the blueprint, or template, provided by an existing class.\",\"answer_set\":\"[28, 29]\",\"points_value\":0.5,\"is_available\":1,\"written_by\":2,\"times_used\":1,\"times_answered_correctly\":0,\"times_answered_incorrectly\":0,\"answers\":null,\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null},\"2\":{\"id\":6,\"question_text\":\"What is the commonly known name for the NOSQL language developed by Facebook?\",\"answer_set\":\"[2, 6, 18]\",\"points_value\":1,\"is_available\":1,\"written_by\":2,\"times_used\":2,\"times_answered_correctly\":0,\"times_answered_incorrectly\":0,\"answers\":null,\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null},\"answers\":null},\"first_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/questions?page=1\",\"from\":4,\"last_page\":4,\"last_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/questions?page=4\",\"links\":[{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/questions?page=1\",\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/questions?page=1\",\"label\":\"1\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/questions?page=2\",\"label\":\"2\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/questions?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/questions?page=4\",\"label\":\"4\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/questions?page=3\",\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/questions?page=3\",\"path\":\"http:\\\/\\\/localhost\\\/api\\\/questions\",\"per_page\":3,\"prev_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/questions?page=1\",\"to\":7,\"total\":11},\"message\":\"Total of 4 Questions retrieved\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Search for PLUMS quiz questions where the text field matches search term",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/questions\/search",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/questions\/search",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/questions\/search",
+                                    "key": "http:\/\/localhost\/api\/questions\/search",
+                                    "value": "totam",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"search\":\"vfrecdgtydqwkpg\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": [{\n         \"id\": 2,\n         \"question_text\": \"Which of the following statements apply to SQL?\",\n         \"answer_set\": \"[7, 12, 15, 20]\",\n         \"points_value\": 5,\n         \"is_available\": 1,\n         \"written_by\": 1,\n         \"times_used\": 0,\n         \"times_answered_correctly\": 0,\n         \"times_answered_incorrectly\": 0,\n         \"answers\": null,\n         \"created_at\": \"2023-01-10T08:25:27.000000Z\",\n         \"updated_at\": \"2023-01-10T08:25:27.000000Z\",\n         \"deleted_at\": null\n     },\n     {\n         \"id\": 6,\n         \"question_text\": \"What is the commonly known name for the NOSQL language developed by Facebook?\",\n         \"answer_set\": \"[2, 6, 18]\",\n         \"points_value\": 1,\n         \"is_available\": 1,\n         \"written_by\": 1,\n         \"times_used\": 0,\n         \"times_answered_correctly\": 0,\n         \"times_answered_incorrectly\": 0,\n         \"answers\": null,\n         \"created_at\": \"2023-01-10T08:25:27.000000Z\",\n         \"updated_at\": \"2023-01-10T08:25:27.000000Z\",\n         \"deleted_at\": null\n     }],\n \"message\": \"2 matching Questions retrieved\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display data on a PLUMS quiz question in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/questions\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/questions\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the question."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/questions\/7",
+                                    "key": "http:\/\/localhost\/api\/questions\/7",
+                                    "value": "numquam",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 7,\n         \"question_text\": \"There are many terms relating to security with regards to the Web. Which of the following statements are most appropriate to define Authentication?\",\n         \"answer_set\": \"[11, 19, 25]\",\n         \"points_value\": 0.5,\n         \"is_available\": 1,\n         \"written_by\": 1,\n         \"times_used\": 2,\n         \"times_answered_correctly\": 0,\n         \"times_answered_incorrectly\": 0,\n         \"answers\": [{\n                 \"id\": 11,\n                 \"answer_text\": \"Authentication is the process of 'logging into' a web application\",\n                 \"is_correct\": 1,\n                 \"created_at\": \"2023-01-29T05:00:38.000000Z\",\n                 \"updated_at\": \"2023-01-29T05:00:38.000000Z\",\n                 \"deleted_at\": null\n             },\n             {\n                 \"id\": 19,\n                 \"answer_text\": \"Authentication helps the programmer to identify the real elements of an application\",\n                 \"is_correct\": 0,\n                 \"created_at\": \"2023-01-29T05:00:38.000000Z\",\n                 \"updated_at\": \"2023-01-29T05:00:38.000000Z\",\n                 \"deleted_at\": null\n             },\n             {\n                 \"id\": 25,\n                 \"answer_text\": \"Authentication often uses recycled passwords to provide a more secure system\",\n                 \"is_correct\": 0,\n                 \"created_at\": \"2023-01-29T05:00:38.000000Z\",\n                 \"updated_at\": \"2023-01-29T05:00:38.000000Z\",\n                 \"deleted_at\": null\n             }],\n             \"created_at\": \"2023-01-29T05:00:38.000000Z\",\n             \"updated_at\": \"2023-01-29T05:00:38.000000Z\",\n             \"deleted_at\": null\n         },\n     \"message\": \"Question #7 retrieved\"\n   }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create a new PLUMS question in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/questions",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/questions",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/questions\/",
+                                    "key": "http:\/\/localhost\/api\/questions\/",
+                                    "value": "et",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"question_text\":\"What is the answer to life, the universe and everything ??\",\"answer_set\":[31,32,33],\"points_value\":5,\"is_available\":true}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"question_text\": \"What is the answer to life, the universe and everything ??\",\n         \"answer_set\": \"[31, 32, 33]\",\n         \"points_value\": \"5\",\n         \"is_available\": \"1\",\n         \"updated_at\": \"2023-01-12T06:45:52.000000Z\",\n         \"created_at\": \"2023-01-12T06:45:52.000000Z\",\n         \"id\": 11,\n         \"written_by\": 2\n     },\n \"message\": \"New Question #11 created successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Attribute-update of the properties of a Question in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/questions\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/questions\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the question."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/questions\/5",
+                                    "key": "http:\/\/localhost\/api\/questions\/5",
+                                    "value": "delectus",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"answer_text\":\"This quiz will determine your knowledge of networks, servers and routers.\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 5,\n         \"question_text\": \"This quiz will determine your knowledge of networks, servers and routers.\",\n         \"answer_set\": \"[28, 29]\",\n         \"points_value\": 0.5,\n         \"is_available\": 1,\n         \"written_by\": 2,\n         \"times_used\": 1,\n         \"times_answered_correctly\": 0,\n         \"times_answered_incorrectly\": 0,\n         \"answers\": null,\n         \"created_at\": \"2023-01-14T22:58:45.000000Z\",\n         \"updated_at\": \"2023-01-15T06:37:46.000000Z\",\n         \"deleted_at\": null\n     },\n \"message\": \"Question #5 updated successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Block-update of all attributes of a PLUMS question in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/questions\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/questions\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the question."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/questions\/3",
+                                    "key": "http:\/\/localhost\/api\/questions\/3",
+                                    "value": "labore",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"question_text\":\"What is the meaning of Life??\",\"answer_set\":[1,8,9,15],\"points_value\":3,\"is_available\":true,\"written_by\":2,\"times_used\":4,\"times_answered_correctly\":18,\"times_answered_incorrectly\":18,\"times_answer_correctly\":5,\"times_answer_incorrectly\":15}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n     \"id\": 4,\n         \"question_text\": \"What is the meaning of Life ??\",\n         \"answer_set\": \"[1, 8, 9, 15]\",\n         \"points_value\": \"3\",\n         \"is_available\": \"1\",\n         \"written_by\": \"2\",\n         \"times_used\": \"4\",\n         \"times_answered_correctly\": \"5\",\n         \"times_answered_incorrectly\": \"15\",\n         \"answers\": null,\n\"          created_at\": \"2023-01-13T20:40:24.000000Z\",\n         \"updated_at\": \"2023-01-13T23:01:09.000000Z\",\n         \"deleted_at\": null\n     },\n \"message\": \"Question #4 updated successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Mark a PLUMS question record for deletion from storage (soft delete)",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/questions\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/questions\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the question."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/questions\/11",
+                                    "key": "http:\/\/localhost\/api\/questions\/11",
+                                    "value": "vero",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 11,\n         \"question_text\": \"What is the answer to life, the universe and everything ??\",\n         \"answer_set\": \"[31, 32, 33]\",\n         \"points_value\": 5,\n         \"is_available\": 1,\n         \"written_by\": null,\n         \"times_used\": 0,\n         \"times_answered_correctly\": 0,\n         \"times_answered_incorrectly\": 0,\n         \"answers\": null,\n         \"created_at\": \"2023-01-12T08:20:02.000000Z\",\n         \"updated_at\": \"2023-01-12T08:44:19.000000Z\",\n         \"deleted_at\": \"2023-01-12T08:44:19.000000Z\"\n     },\n \"message\": \"Question #11 has been marked for deletion\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "QuizAPI",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a list of available quizzes for the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/quizzes",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/quizzes",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/quizzes\/",
+                                    "key": "http:\/\/localhost\/api\/quizzes\/",
+                                    "value": "reiciendis",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"page\":1,\"per_page\":6}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "55"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"current_page\":1,\"data\":[{\"id\":1,\"title\":\"Quiz One\",\"description\":\"Quiz 1 will test your knowledge of programming at an intermediate level.\",\"question_set\":\"[1, 4, 7, 9]\",\"level_id\":1,\"field_id\":2,\"skill_id\":11,\"is_available\":1,\"prepared_by\":1,\"times_attempted\":0,\"fastest_time\":\"00:00:00\",\"average_time\":\"00:00:00\",\"questions\":null,\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null},{\"id\":2,\"title\":\"Quiz Two\",\"description\":\"BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES\",\"question_set\":\"[1, 3, 5, 6]\",\"level_id\":1,\"field_id\":7,\"skill_id\":5,\"is_available\":1,\"prepared_by\":1,\"times_attempted\":0,\"fastest_time\":\"00:00:00\",\"average_time\":\"00:00:00\",\"questions\":null,\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null},{\"id\":3,\"title\":\"Quiz Three\",\"description\":\"BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES\",\"question_set\":\"[2, 3, 7, 8]\",\"level_id\":5,\"field_id\":4,\"skill_id\":11,\"is_available\":1,\"prepared_by\":1,\"times_attempted\":0,\"fastest_time\":\"00:00:00\",\"average_time\":\"00:00:00\",\"questions\":null,\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null},{\"id\":4,\"title\":\"Quiz Four\",\"description\":\"BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES\",\"question_set\":\"[3, 4, 6, 10]\",\"level_id\":4,\"field_id\":5,\"skill_id\":11,\"is_available\":1,\"prepared_by\":1,\"times_attempted\":0,\"fastest_time\":\"00:00:00\",\"average_time\":\"00:00:00\",\"questions\":null,\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null},{\"id\":5,\"title\":\"A quiz by Steve to test knowledge of alcoholic beverages.\",\"description\":\"This multiple-choice quiz will test your current knowledge about alcohol.\",\"question_set\":\"[7, 8, 10, 11]\",\"level_id\":3,\"field_id\":5,\"skill_id\":4,\"is_available\":0,\"prepared_by\":9,\"times_attempted\":0,\"fastest_time\":\"00:00:00\",\"average_time\":\"00:00:00\",\"questions\":null,\"created_at\":\"2023-01-29T12:48:12.000000Z\",\"updated_at\":\"2023-01-29T12:48:12.000000Z\",\"deleted_at\":null}],\"first_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/quizzes?page=1\",\"from\":1,\"last_page\":1,\"last_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/quizzes?page=1\",\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/quizzes?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":null,\"path\":\"http:\\\/\\\/localhost\\\/api\\\/quizzes\",\"per_page\":6,\"prev_page_url\":null,\"to\":5,\"total\":5},\"message\":\"Total of 5 Quizzes retrieved\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Search for quiz records where title or description field matches search term",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/quizzes\/search",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/quizzes\/search",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/quizzes\/search",
+                                    "key": "http:\/\/localhost\/api\/quizzes\/search",
+                                    "value": "a",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"search\":\"vjzcporlytyhvxiqyea\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": [\n     {\n         \"id\": 1,\n         \"title\": \"Quiz One\",\n         \"description\": \"Quiz 1 will test your knowledge of programming at an intermediate level.\",\n         \"question_set\": \"[1, 4, 7, 9]\",\n         \"level_id\": 1,\n         \"field_id\": 2,\n         \"skill_id\": 11,\n         \"is_available\": 1,\n         \"prepared_by\": 1,\n         \"times_attempted\": 0,\n         \"fastest_time\": \"00:03:45\",\n         \"average_time\": \"00:05:00\",\n         \"questions\": null,\n         \"created_at\": \"2023-01-10T10:26:06.000000Z\",\n         \"updated_at\": \"2023-01-10T10:26:06.000000Z\",\n         \"deleted_at\": null\n     }],\n \"message\": \"1 matching Quiz retrieved\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display data on a quiz record",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/quizzes\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/quizzes\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the quiz."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/quizzes\/3",
+                                    "key": "http:\/\/localhost\/api\/quizzes\/3",
+                                    "value": "voluptas",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": [{\n         \"id\": 3,\n         \"title\": \"Quiz Three\",\n         \"description\": \"BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES\",\n         \"question_set\": \"[2, 3, 7, 8]\",\n         \"level_id\": 5,\n         \"field_id\": 4,\n         \"skill_id\": 11,\n         \"is_available\": 1,\n         \"prepared_by\": 1,\n         \"times_attempted\": 0,\n         \"fastest_time\": \"00:03:45\",\n         \"average_time\": \"00:05:00\",\n         \"questions\": [\n         {\n             \"id\": 2,\n             \"question_text\": \"Which of the following statements apply to SQL?\",\n             \"answer_set\": \"[7, 12, 15, 20]\",\n             \"points_value\": 5,\n             \"is_available\": 1,\n             \"written_by\": 1,\n             \"times_used\": 0,\n             \"times_answered_correctly\": 0,\n             \"times_answered_incorrectly\": 0,\n             \"answers\": null,\n             \"created_at\": \"2023-01-09T10:46:59.000000Z\",\n             \"updated_at\": \"2023-01-09T10:46:59.000000Z\",\n             \"deleted_at\": null\n             },\n             {\n             \"id\": 3,\n             \"question_text\": \"Which of the following statements are true of the term \\\"Client Business Domain\\\"?\",\n             \"answer_set\": \"[3, 5, 10, 13, 17, 22]\",\n             \"points_value\": 2.5,\n             \"is_available\": 1,\n             \"written_by\": 1,\n             \"times_used\": 0,\n             \"times_answered_correctly\": 0,\n             \"times_answered_incorrectly\": 0,\n             \"answers\": null,\n             \"created_at\": \"2023-01-09T10:46:59.000000Z\",\n             \"updated_at\": \"2023-01-09T10:46:59.000000Z\",\n             \"deleted_at\": null\n             },\n             {\n             \"id\": 7,\n             \"question_text\": \"There are many terms relating to security with regards to the Web. Which of the following statements are most appropriate to define Authentication?\",\n             \"answer_set\": \"[11, 19, 25]\",\n             \"points_value\": 0.5,\n             \"is_available\": 1,\n             \"written_by\": 1,\n             \"times_used\": 0,\n             \"times_answered_correctly\": 0,\n             \"times_answered_incorrectly\": 0,\n             \"answers\": null,\n             \"created_at\": \"2023-01-09T10:46:59.000000Z\",\n             \"updated_at\": \"2023-01-09T10:46:59.000000Z\",\n             \"deleted_at\": null\n             },\n             {\n             \"id\": 8,\n             \"question_text\": \"When the data contained in a database is mainly used for read-based processes, which of the following may be used to improve performance?\",\n             \"answer_set\": \"[23, 24]\",\n             \"points_value\": 5,\n             \"is_available\": 1,\n             \"written_by\": 1,\n             \"times_used\": 0,\n             \"times_answered_correctly\": 0,\n             \"times_answered_incorrectly\": 0,\n             \"answers\": null,\n             \"created_at\": \"2023-01-09T10:46:59.000000Z\",\n             \"updated_at\": \"2023-01-09T10:46:59.000000Z\",\n             \"deleted_at\": null\n             }]\n         \"created_at\": \"2023-01-09T10:46:59.000000Z\",\n         \"updated_at\": \"2023-01-09T10:46:59.000000Z\",\n         \"deleted_at\": null\n       ],\n   \"message\": \"Quiz #3 retrieved\"\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create a new quiz in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/quizzes",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/quizzes",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/quizzes\/",
+                                    "key": "http:\/\/localhost\/api\/quizzes\/",
+                                    "value": "nihil",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"title\":\"Yet Another Quiz\",\"description\":\"This multiple-choice quiz will test your current knowledge about popular literature.\",\"question_set\":[4,5,10,11],\"level_id\":3,\"field_id\":5,\"skill_id\":4,\"is_available\":true}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"title\": \"Yet Another Quiz\",\n         \"description\": \"This multiple-choice quiz will test your current knowledge about popular literature.\",\n         \"question_set\": \"[4, 5, 10, 11]\",\n         \"level_id\": \"3\",\n         \"field_id\": \"5\",\n         \"skill_id\": \"4\",\n         \"is_available\": \"0\",\n         \"updated_at\": \"2023-01-12T07:53:46.000000Z\",\n         \"created_at\": \"2023-01-12T07:53:46.000000Z\",\n         \"id\": 5,\n         \"prepared_by\": 5\n     },\n \"message\": \"New Quiz #5 created successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Attribute-update of the properties of a Quiz in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/quizzes\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/quizzes\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the quiz."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/quizzes\/5",
+                                    "key": "http:\/\/localhost\/api\/quizzes\/5",
+                                    "value": "qui",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"title\":\"Programming knowledge-based Quiz.\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 5,\n         \"title\": \"Programming knowledge-based Quiz\",\n         \"description\": \"This multiple-choice quiz will test your current knowledge about popular literature.\",\n         \"question_set\": \"[4, 5, 10, 11]\",\n         \"level_id\": 3,\n         \"field_id\": 5,\n         \"skill_id\": 4,\n         \"is_available\": 0,\n         \"prepared_by\": 6,\n         \"times_attempted\": 0,\n         \"fastest_time\": \"00:00:00\",\n         \"average_time\": \"00:00:00\",\n         \"questions\": null,\n         \"created_at\": \"2023-01-15T02:02:11.000000Z\",\n         \"updated_at\": \"2023-01-15T07:37:42.000000Z\",\n         \"deleted_at\": null\n     },\n \"message\": \"Quiz #5 updated successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Block-update of all attributes of a quiz in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/quizzes\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/quizzes\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the quiz."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/quizzes\/4",
+                                    "key": "http:\/\/localhost\/api\/quizzes\/4",
+                                    "value": "rerum",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"title\":\"Some Quiz created for Testing\",\"description\":\"BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES\",\"question_set\":[4,5,7,11],\"level_id\":3,\"field_id\":7,\"skill_id\":8,\"is_available\":false,\"prepared_by\":2,\"times_attempted\":7,\"fastest_time\":\"00:10:15\",\"average_time\":\"00:15:25\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 4,\n         \"title\": \"Some Quiz created for Testing\",\n         \"description\": \"BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES\",\n         \"question_set\": \"[4, 5, 7, 11]\",\n         \"level_id\": \"3\",\n         \"field_id\": \"7\",\n         \"skill_id\": \"8\",\n         \"is_available\": \"0\",\n         \"prepared_by\": \"2\",\n         \"times_attempted\": \"7\",\n         \"questions\": null,\n         \"fastest_time\": \"00:10:15\",\n         \"average_time\": \"00:15:25\",\n         \"created_at\": \"2023-01-13T20:40:24.000000Z\",\n         \"updated_at\": \"2023-01-14T00:23:51.000000Z\",\n         \"deleted_at\": null\n     },\n \"message\": \"Quiz #4 updated successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Mark a quiz record for deletion from storage (soft delete)",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/quizzes\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/quizzes\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the quiz."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/quizzes\/6",
+                                    "key": "http:\/\/localhost\/api\/quizzes\/6",
+                                    "value": "architecto",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 6,\n         \"title\": \"Yet Another Quiz\",\n         \"description\": \"This multiple-choice quiz will test your current knowledge about popular literature.\",\n         \"question_set\": \"[4, 5, 10, 11]\",\n         \"level_id\": 3,\n         \"field_id\": 5,\n         \"skill_id\": 4,\n         \"is_available\": 0,\n         \"prepared_by\": null,\n         \"times_attempted\": 0,\n         \"fastest_time\": null,\n         \"average_time\": null,\n         \"questions\": null,\n         \"created_at\": \"2023-01-12T08:23:17.000000Z\",\n         \"updated_at\": \"2023-01-12T08:23:17.000000Z\",\n         \"deleted_at\": null\n     },\n \"message\": \"Quiz #6 has been marked for deletion\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "SkillAPI",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a list of skills in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/skills",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/skills",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/skills\/",
+                                    "key": "http:\/\/localhost\/api\/skills\/",
+                                    "value": "inventore",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"page\":2,\"per_page\":3}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "54"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"current_page\":2,\"data\":[{\"id\":4,\"name\":\"Counselling\",\"description\":\"ENTER DESCRIPTION HERE\",\"field_id\":7,\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null},{\"id\":5,\"name\":\"Auslan\",\"description\":\"ENTER DESCRIPTION HERE\",\"field_id\":7,\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null},{\"id\":6,\"name\":\"Fashion Design\",\"description\":\"ENTER DESCRIPTION HERE\",\"field_id\":6,\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\",\"deleted_at\":null}],\"first_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/skills?page=1\",\"from\":4,\"last_page\":5,\"last_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/skills?page=5\",\"links\":[{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/skills?page=1\",\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/skills?page=1\",\"label\":\"1\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/skills?page=2\",\"label\":\"2\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/skills?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/skills?page=4\",\"label\":\"4\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/skills?page=5\",\"label\":\"5\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/skills?page=3\",\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/skills?page=3\",\"path\":\"http:\\\/\\\/localhost\\\/api\\\/skills\",\"per_page\":3,\"prev_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/skills?page=1\",\"to\":6,\"total\":13},\"message\":\"Total of 3 Skills retrieved\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Search for skill records where name or description field matches search term",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/skills\/search",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/skills\/search",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/skills\/search",
+                                    "key": "http:\/\/localhost\/api\/skills\/search",
+                                    "value": "omnis",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"search\":\"ufznnuzlhqzfxfiffr\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": [{\n         \"id\": 11,\n         \"name\": \"Business Management\",\n         \"description\": \"ENTER DESCRIPTION HERE\",\n         \"field_id\": 5,\n         \"created_at\": \"2023-01-10T10:26:05.000000Z\",\n         \"updated_at\": \"2023-01-10T10:26:05.000000Z\",\n         \"deleted_at\": null\n     }],\n \"message\": \"1 matching Skill retrieved\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display data on a skill record",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/skills\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/skills\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the skill."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/skills\/11",
+                                    "key": "http:\/\/localhost\/api\/skills\/11",
+                                    "value": "nihil",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 11,\n         \"name\": \"Business Management\",\n         \"description\": \"ENTER DESCRIPTION HERE\",\n         \"created_at\": \"2023-01-06T23:12:08.000000Z\",\n         \"updated_at\": \"2023-01-06T23:12:08.000000Z\",\n         \"deleted_at\": null,\n         \"field\": null,\n         \"quiz\": [{\n             \"id\": 1,\n             \"title\": \"Quiz One\",\n             \"description\": \"BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES\",\n             \"question_set\": \"[1, 4, 7, 9]\",\n             \"level_id\": 1,\n             \"field_id\": 2,\n             \"skill_id\": 11,\n             \"is_available\": 1,\n             \"prepared_by\": 1,\n             \"times_attempted\": 9,\n             \"fastest_time\": \"00:03:45\",\n             \"average_time\": \"00:05:00\",\n             \"created_at\": \"2023-01-06T23:12:08.000000Z\",\n             \"updated_at\": \"2023-01-06T23:12:08.000000Z\",\n             \"deleted_at\": null\n         },\n         {\n             \"id\": 3,\n             \"title\": \"Quiz Three\",\n             \"description\": \"BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES\",\n             \"question_set\": \"[2, 3, 7, 8]\",\n             \"level_id\": 5,\n             \"field_id\": 4,\n             \"skill_id\": 11,\n             \"is_available\": 1,\n             \"prepared_by\": 1,\n             \"times_attempted\": 4,\n             \"fastest_time\": \"00:03:45\",\n             \"average_time\": \"00:05:00\",\n             \"created_at\": \"2023-01-06T23:12:08.000000Z\",\n             \"updated_at\": \"2023-01-06T23:12:08.000000Z\",\n             \"deleted_at\": null\n         },\n         {\n             \"id\": 4,\n             \"title\": \"Quiz Four\",\n             \"description\": \"BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES\",\n             \"question_set\": \"[3, 4, 6, 10]\",\n             \"level_id\": 4,\n             \"field_id\": 5,\n             \"skill_id\": 11,\n             \"is_available\": 1,\n             \"prepared_by\": 1,\n             \"times_attempted\": 4,\n             \"fastest_time\": \"00:03:45\",\n             \"average_time\": \"00:05:00\",\n             \"created_at\": \"2023-01-06T23:12:08.000000Z\",\n             \"updated_at\": \"2023-01-06T23:12:08.000000Z\",\n             \"deleted_at\": null\n         }\n      ]},\n  \"message\": \"Skill #11 retrieved\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create a new skill area in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/skills",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/skills",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/skills\/",
+                                    "key": "http:\/\/localhost\/api\/skills\/",
+                                    "value": "quo",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"Robotics\",\"description\":\"Studies in Robotics incorporates engineering skills and computing.\",\"field_id\":4}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"name\": \"Robotics\",\n         \"description\": \"Studies in Robotics incorporates engineering and computing skills.\",\n         \"field_id\": \"4\",\n         \"updated_at\": \"2023-01-29T12:29:01.000000Z\",\n         \"created_at\": \"2023-01-29T12:29:01.000000Z\",\n         \"id\": 13\n     },\n \"message\": \"New Skill #13 created successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Attribute-update of the properties of a Skill in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/skills\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/skills\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the skill."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/skills\/5",
+                                    "key": "http:\/\/localhost\/api\/skills\/5",
+                                    "value": "sequi",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"Media Studies\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 5,\n         \"name\": \"Media Studies\",\n         \"description\": \"ENTER DESCRIPTION HERE\",\n         \"field_id\": 7,\n         \"created_at\": \"2023-01-14T22:58:45.000000Z\",\n         \"updated_at\": \"2023-01-15T08:04:42.000000Z\",\n         \"deleted_at\": null\n     },\n \"message\": \"Skill #5 updated successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Block-update of all attributes of a skill in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/skills\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/skills\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the skill."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/skills\/11",
+                                    "key": "http:\/\/localhost\/api\/skills\/11",
+                                    "value": "omnis",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"Corporate Skills Management\",\"description\":\"Learn the essential skills required to ascend the corporate ladder.\",\"field_id\":5}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 11,\n         \"name\": \"Corporate Skills Management\",\n         \"description\": \"Learn the essential skills required to ascend the corporate ladder.\",\n         \"field_id\": 5,\n         \"created_at\": \"2023-01-13T12:17:39.000000Z\",\n         \"updated_at\": \"2023-01-13T16:03:28.000000Z\",\n         \"deleted_at\": null\n     },\n \"message\": \"Skill #11 updated successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Mark a skill record for deletion from storage (soft delete)",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/skills\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/skills\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the skill."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/skills\/3",
+                                    "key": "http:\/\/localhost\/api\/skills\/3",
+                                    "value": "laboriosam",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 3,\n         \"name\": \"Networking\",\n         \"description\": \"ENTER DESCRIPTION HERE\",\n         \"field_id\": 11,\n         \"created_at\": \"2023-01-12T07:52:18.000000Z\",\n         \"updated_at\": \"2023-01-12T08:50:11.000000Z\",\n         \"deleted_at\": \"2023-01-12T08:50:11.000000Z\"\n     },\n \"message\": \"Skill #3 has been marked for deletion\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "UserAPI",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a list of the user records in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/users\/",
+                                    "key": "http:\/\/localhost\/api\/users\/",
+                                    "value": "nihil",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"page\":1,\"per_page\":4}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "53"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"current_page\":1,\"data\":[{\"id\":1,\"email\":\"admin@plums.com\",\"email_verified_at\":null,\"profile\":{\"given_name\":\"Adrian\",\"family_name\":\"Smith\",\"city\":\"Birmingham\",\"country\":\"GBR\"},\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\"},{\"id\":2,\"email\":\"lsd@plums.com\",\"email_verified_at\":null,\"profile\":{\"given_name\":\"Alice\",\"family_name\":\"Dee\",\"city\":\"Sacramento\",\"country\":\"USA\"},\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\"},{\"id\":3,\"email\":\"stevelives@home.com\",\"email_verified_at\":null,\"profile\":{\"country\":\"GBR\",\"updated_at\":\"2023-01-29T05:43:17.000000Z\",\"created_at\":\"2023-01-29T05:43:17.000000Z\",\"given_name\":\"Stevie\",\"family_name\":\"Wonderful\",\"city\":\"London\"},\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:43:17.000000Z\"},{\"id\":4,\"email\":\"peter123@example.com\",\"email_verified_at\":null,\"profile\":{\"given_name\":\"Peter\",\"family_name\":\"Smith\",\"city\":\"Miami\",\"country\":\"USA\"},\"created_at\":\"2023-01-29T05:00:38.000000Z\",\"updated_at\":\"2023-01-29T05:00:38.000000Z\"}],\"first_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/users?page=1\",\"from\":1,\"last_page\":3,\"last_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/users?page=3\",\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/users?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/users?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/users?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/users?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":\"http:\\\/\\\/localhost\\\/api\\\/users?page=2\",\"path\":\"http:\\\/\\\/localhost\\\/api\\\/users\",\"per_page\":4,\"prev_page_url\":null,\"to\":4,\"total\":9},\"message\":\"Total of 4 Users retrieved\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Search for user records where email or profile field matches search term",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/search",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/search",
+                            "variable": [
+                                {
+                                    "id": "http:\/\/localhost\/api\/users\/search",
+                                    "key": "http:\/\/localhost\/api\/users\/search",
+                                    "value": "sapiente",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"search\":\"oxxga\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": [{\n         \"id\": 2,\n         \"email\": \"lsd@plums.com\",\n         \"email_verified_at\": null,\n         \"profile\": {\n             \"given_name\": \"Alice\",\n             \"family_name\": \"Dee\",\n             \"city\": \"Sacramento\",\n             \"country\": \"USA\"\n         },\n         \"created_at\": \"2023-01-29T05:00:38.000000Z\",\n         \"updated_at\": \"2023-01-29T05:00:38.000000Z\"\n     },\n     {\n         \"id\": 4,\n         \"email\": \"peter123@example.com\",\n         \"email_verified_at\": null,\n         \"profile\": {\n             \"given_name\": \"Peter\",\n             \"family_name\": \"Smith\",\n             \"city\": \"Miami\",\n             \"country\": \"USA\"\n         },\n         \"created_at\": \"2023-01-29T05:00:38.000000Z\",\n         \"updated_at\": \"2023-01-29T05:00:38.000000Z\"\n     }],\n \"message\": \"2 matching Users retrieved\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display a user record",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/users\/2",
+                                    "key": "http:\/\/localhost\/api\/users\/2",
+                                    "value": "rem",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 2,\n         \"email\": \"lsd@plums.com\",\n         \"email_verified_at\": null,\n         \"profile\": {\n             \"given_name\": \"Alice\",\n             \"family_name\": \"Dee\",\n             \"city\": \"Sacramento\",\n             \"country\": \"USA\",\n             \"created_at\": \"2023-01-07T12:59:56.000000Z\",\n             \"updated_at\": \"2023-01-07T12:59:56.000000Z\"\n         }\n     },\n \"message\": \"User #2 retrieved\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Attribute-update of the properties of a User in the API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/users\/7",
+                                    "key": "http:\/\/localhost\/api\/users\/7",
+                                    "value": "ea",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"alex@georgemail.com\",\"password\":\"secure1234\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 7,\n         \"email\": \"alex@georgemail.com\",\n         \"email_verified_at\": null,\n         \"profile\": {\n             \"country\": \"AUS\",\n             \"updated_at\": \"2023-01-29T05:37:13.000000Z\",\n             \"created_at\": \"2023-01-29T05:37:13.000000Z\"\n             },\n         \"created_at\": \"2023-01-29T05:07:15.000000Z\",\n         \"updated_at\": \"2023-01-29T05:37:13.000000Z\"\n     },\n \"message\": \"User #7 updated successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Block-update of all attributes in a user record",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                },
+                                {
+                                    "id": "http:\/\/localhost\/api\/users\/3",
+                                    "key": "http:\/\/localhost\/api\/users\/3",
+                                    "value": "omnis",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"given_name\":\"Stevie\",\"family_name\":\"Wonderful\",\"city\":\"London\",\"country\":\"GBR\",\"email\":\"stevelives@home.com\",\"password\":\"password1234\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"success\": true,\n     \"data\": {\n         \"id\": 3,\n         \"email\": \"stevelives@home.com\",\n         \"email_verified_at\": null,\n         \"profile\": {\n             \"country\": \"GBR\",\n             \"updated_at\": \"2023-01-29T05:43:17.000000Z\",\n             \"created_at\": \"2023-01-29T05:43:17.000000Z\",\n             \"given_name\": \"Stevie\",\n             \"family_name\": \"Wonderful\",\n             \"city\": \"London\"\n         },\n         \"created_at\": \"2023-01-29T05:00:38.000000Z\",\n         \"updated_at\": \"2023-01-29T05:43:17.000000Z\"\n     },\n \"message\": \"User #3 updated successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

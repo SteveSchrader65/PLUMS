@@ -1,0 +1,728 @@
+name: QuizAPI
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/quizzes
+    metadata:
+      groupName: QuizAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a list of available quizzes for the API'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      'http://localhost/api/quizzes/':
+        name: 'http://localhost/api/quizzes/'
+        description: ''
+        required: false
+        example: reiciendis
+        type: string
+        custom: []
+    cleanUrlParameters:
+      'http://localhost/api/quizzes/': reiciendis
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      page:
+        name: page
+        description: ''
+        required: false
+        example: 1
+        type: integer
+        custom: []
+      per_page:
+        name: per_page
+        description: ''
+        required: false
+        example: 6
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      page: 1
+      per_page: 6
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"success":true,"data":{"current_page":1,"data":[{"id":1,"title":"Quiz One","description":"Quiz 1 will test your knowledge of programming at an intermediate level.","question_set":"[1, 4, 7, 9]","level_id":1,"field_id":2,"skill_id":11,"is_available":1,"prepared_by":1,"times_attempted":0,"fastest_time":"00:00:00","average_time":"00:00:00","questions":null,"created_at":"2023-01-29T05:00:38.000000Z","updated_at":"2023-01-29T05:00:38.000000Z","deleted_at":null},{"id":2,"title":"Quiz Two","description":"BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES","question_set":"[1, 3, 5, 6]","level_id":1,"field_id":7,"skill_id":5,"is_available":1,"prepared_by":1,"times_attempted":0,"fastest_time":"00:00:00","average_time":"00:00:00","questions":null,"created_at":"2023-01-29T05:00:38.000000Z","updated_at":"2023-01-29T05:00:38.000000Z","deleted_at":null},{"id":3,"title":"Quiz Three","description":"BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES","question_set":"[2, 3, 7, 8]","level_id":5,"field_id":4,"skill_id":11,"is_available":1,"prepared_by":1,"times_attempted":0,"fastest_time":"00:00:00","average_time":"00:00:00","questions":null,"created_at":"2023-01-29T05:00:38.000000Z","updated_at":"2023-01-29T05:00:38.000000Z","deleted_at":null},{"id":4,"title":"Quiz Four","description":"BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES","question_set":"[3, 4, 6, 10]","level_id":4,"field_id":5,"skill_id":11,"is_available":1,"prepared_by":1,"times_attempted":0,"fastest_time":"00:00:00","average_time":"00:00:00","questions":null,"created_at":"2023-01-29T05:00:38.000000Z","updated_at":"2023-01-29T05:00:38.000000Z","deleted_at":null},{"id":5,"title":"A quiz by Steve to test knowledge of alcoholic beverages.","description":"This multiple-choice quiz will test your current knowledge about alcohol.","question_set":"[7, 8, 10, 11]","level_id":3,"field_id":5,"skill_id":4,"is_available":0,"prepared_by":9,"times_attempted":0,"fastest_time":"00:00:00","average_time":"00:00:00","questions":null,"created_at":"2023-01-29T12:48:12.000000Z","updated_at":"2023-01-29T12:48:12.000000Z","deleted_at":null}],"first_page_url":"http:\/\/localhost\/api\/quizzes?page=1","from":1,"last_page":1,"last_page_url":"http:\/\/localhost\/api\/quizzes?page=1","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/quizzes?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"next_page_url":null,"path":"http:\/\/localhost\/api\/quizzes","per_page":6,"prev_page_url":null,"to":5,"total":5},"message":"Total of 5 Quizzes retrieved"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '55'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/quizzes/search
+    metadata:
+      groupName: QuizAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Search for quiz records where title or description field matches search term'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      'http://localhost/api/quizzes/search':
+        name: 'http://localhost/api/quizzes/search'
+        description: ''
+        required: false
+        example: a
+        type: string
+        custom: []
+    cleanUrlParameters:
+      'http://localhost/api/quizzes/search': a
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      search:
+        name: search
+        description: 'Must not be greater than  64 characters.'
+        required: true
+        example: vjzcporlytyhvxiqyea
+        type: string
+        custom: []
+    cleanBodyParameters:
+      search: vjzcporlytyhvxiqyea
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "success": true,
+               "data": [
+               {
+                   "id": 1,
+                   "title": "Quiz One",
+                   "description": "Quiz 1 will test your knowledge of programming at an intermediate level.",
+                   "question_set": "[1, 4, 7, 9]",
+                   "level_id": 1,
+                   "field_id": 2,
+                   "skill_id": 11,
+                   "is_available": 1,
+                   "prepared_by": 1,
+                   "times_attempted": 0,
+                   "fastest_time": "00:03:45",
+                   "average_time": "00:05:00",
+                   "questions": null,
+                   "created_at": "2023-01-10T10:26:06.000000Z",
+                   "updated_at": "2023-01-10T10:26:06.000000Z",
+                   "deleted_at": null
+               }],
+           "message": "1 matching Quiz retrieved"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/quizzes/{id}'
+    metadata:
+      groupName: QuizAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display data on a quiz record'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the quiz.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      'http://localhost/api/quizzes/3':
+        name: 'http://localhost/api/quizzes/3'
+        description: ''
+        required: false
+        example: voluptas
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 1
+      'http://localhost/api/quizzes/3': voluptas
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "success": true,
+               "data": [{
+                   "id": 3,
+                   "title": "Quiz Three",
+                   "description": "BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES",
+                   "question_set": "[2, 3, 7, 8]",
+                   "level_id": 5,
+                   "field_id": 4,
+                   "skill_id": 11,
+                   "is_available": 1,
+                   "prepared_by": 1,
+                   "times_attempted": 0,
+                   "fastest_time": "00:03:45",
+                   "average_time": "00:05:00",
+                   "questions": [
+                   {
+                       "id": 2,
+                       "question_text": "Which of the following statements apply to SQL?",
+                       "answer_set": "[7, 12, 15, 20]",
+                       "points_value": 5,
+                       "is_available": 1,
+                       "written_by": 1,
+                       "times_used": 0,
+                       "times_answered_correctly": 0,
+                       "times_answered_incorrectly": 0,
+                       "answers": null,
+                       "created_at": "2023-01-09T10:46:59.000000Z",
+                       "updated_at": "2023-01-09T10:46:59.000000Z",
+                       "deleted_at": null
+                       },
+                       {
+                       "id": 3,
+                       "question_text": "Which of the following statements are true of the term \"Client Business Domain\"?",
+                       "answer_set": "[3, 5, 10, 13, 17, 22]",
+                       "points_value": 2.5,
+                       "is_available": 1,
+                       "written_by": 1,
+                       "times_used": 0,
+                       "times_answered_correctly": 0,
+                       "times_answered_incorrectly": 0,
+                       "answers": null,
+                       "created_at": "2023-01-09T10:46:59.000000Z",
+                       "updated_at": "2023-01-09T10:46:59.000000Z",
+                       "deleted_at": null
+                       },
+                       {
+                       "id": 7,
+                       "question_text": "There are many terms relating to security with regards to the Web. Which of the following statements are most appropriate to define Authentication?",
+                       "answer_set": "[11, 19, 25]",
+                       "points_value": 0.5,
+                       "is_available": 1,
+                       "written_by": 1,
+                       "times_used": 0,
+                       "times_answered_correctly": 0,
+                       "times_answered_incorrectly": 0,
+                       "answers": null,
+                       "created_at": "2023-01-09T10:46:59.000000Z",
+                       "updated_at": "2023-01-09T10:46:59.000000Z",
+                       "deleted_at": null
+                       },
+                       {
+                       "id": 8,
+                       "question_text": "When the data contained in a database is mainly used for read-based processes, which of the following may be used to improve performance?",
+                       "answer_set": "[23, 24]",
+                       "points_value": 5,
+                       "is_available": 1,
+                       "written_by": 1,
+                       "times_used": 0,
+                       "times_answered_correctly": 0,
+                       "times_answered_incorrectly": 0,
+                       "answers": null,
+                       "created_at": "2023-01-09T10:46:59.000000Z",
+                       "updated_at": "2023-01-09T10:46:59.000000Z",
+                       "deleted_at": null
+                       }]
+                   "created_at": "2023-01-09T10:46:59.000000Z",
+                   "updated_at": "2023-01-09T10:46:59.000000Z",
+                   "deleted_at": null
+                 ],
+             "message": "Quiz #3 retrieved"
+           }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/quizzes
+    metadata:
+      groupName: QuizAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a new quiz in the API'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      'http://localhost/api/quizzes/':
+        name: 'http://localhost/api/quizzes/'
+        description: ''
+        required: false
+        example: nihil
+        type: string
+        custom: []
+    cleanUrlParameters:
+      'http://localhost/api/quizzes/': nihil
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: ''
+        required: false
+        example: 'Yet Another Quiz'
+        type: string
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'This multiple-choice quiz will test your current knowledge about popular literature.'
+        type: string
+        custom: []
+      question_set:
+        name: question_set
+        description: ''
+        required: false
+        example:
+          - 4
+          - 5
+          - 10
+          - 11
+        type: 'string[]'
+        custom: []
+      level_id:
+        name: level_id
+        description: ''
+        required: false
+        example: 3
+        type: integer
+        custom: []
+      field_id:
+        name: field_id
+        description: ''
+        required: false
+        example: 5
+        type: integer
+        custom: []
+      skill_id:
+        name: skill_id
+        description: ''
+        required: false
+        example: 4
+        type: integer
+        custom: []
+      is_available:
+        name: is_available
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        custom: []
+    cleanBodyParameters:
+      title: 'Yet Another Quiz'
+      description: 'This multiple-choice quiz will test your current knowledge about popular literature.'
+      question_set:
+        - 4
+        - 5
+        - 10
+        - 11
+      level_id: 3
+      field_id: 5
+      skill_id: 4
+      is_available: true
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "success": true,
+               "data": {
+                   "title": "Yet Another Quiz",
+                   "description": "This multiple-choice quiz will test your current knowledge about popular literature.",
+                   "question_set": "[4, 5, 10, 11]",
+                   "level_id": "3",
+                   "field_id": "5",
+                   "skill_id": "4",
+                   "is_available": "0",
+                   "updated_at": "2023-01-12T07:53:46.000000Z",
+                   "created_at": "2023-01-12T07:53:46.000000Z",
+                   "id": 5,
+                   "prepared_by": 5
+               },
+           "message": "New Quiz #5 created successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PATCH
+    uri: 'api/quizzes/{id}'
+    metadata:
+      groupName: QuizAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Attribute-update of the properties of a Quiz in the API'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the quiz.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      'http://localhost/api/quizzes/5':
+        name: 'http://localhost/api/quizzes/5'
+        description: ''
+        required: false
+        example: qui
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 1
+      'http://localhost/api/quizzes/5': qui
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: ''
+        required: false
+        example: 'Programming knowledge-based Quiz.'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      title: 'Programming knowledge-based Quiz.'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "success": true,
+               "data": {
+                   "id": 5,
+                   "title": "Programming knowledge-based Quiz",
+                   "description": "This multiple-choice quiz will test your current knowledge about popular literature.",
+                   "question_set": "[4, 5, 10, 11]",
+                   "level_id": 3,
+                   "field_id": 5,
+                   "skill_id": 4,
+                   "is_available": 0,
+                   "prepared_by": 6,
+                   "times_attempted": 0,
+                   "fastest_time": "00:00:00",
+                   "average_time": "00:00:00",
+                   "questions": null,
+                   "created_at": "2023-01-15T02:02:11.000000Z",
+                   "updated_at": "2023-01-15T07:37:42.000000Z",
+                   "deleted_at": null
+               },
+           "message": "Quiz #5 updated successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/quizzes/{id}'
+    metadata:
+      groupName: QuizAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Block-update of all attributes of a quiz in the API'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the quiz.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      'http://localhost/api/quizzes/4':
+        name: 'http://localhost/api/quizzes/4'
+        description: ''
+        required: false
+        example: rerum
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 1
+      'http://localhost/api/quizzes/4': rerum
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: ''
+        required: false
+        example: 'Some Quiz created for Testing'
+        type: string
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES'
+        type: string
+        custom: []
+      question_set:
+        name: question_set
+        description: ''
+        required: false
+        example:
+          - 4
+          - 5
+          - 7
+          - 11
+        type: 'string[]'
+        custom: []
+      level_id:
+        name: level_id
+        description: ''
+        required: false
+        example: 3
+        type: integer
+        custom: []
+      field_id:
+        name: field_id
+        description: ''
+        required: false
+        example: 7
+        type: integer
+        custom: []
+      skill_id:
+        name: skill_id
+        description: ''
+        required: false
+        example: 8
+        type: integer
+        custom: []
+      is_available:
+        name: is_available
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        custom: []
+      prepared_by:
+        name: prepared_by
+        description: ''
+        required: false
+        example: 2
+        type: integer
+        custom: []
+      times_attempted:
+        name: times_attempted
+        description: ''
+        required: false
+        example: 7
+        type: integer
+        custom: []
+      fastest_time:
+        name: fastest_time
+        description: ''
+        required: false
+        example: '00:10:15'
+        type: time
+        custom: []
+      average_time:
+        name: average_time
+        description: ''
+        required: false
+        example: '00:15:25'
+        type: time
+        custom: []
+    cleanBodyParameters:
+      title: 'Some Quiz created for Testing'
+      description: 'BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES'
+      question_set:
+        - 4
+        - 5
+        - 7
+        - 11
+      level_id: 3
+      field_id: 7
+      skill_id: 8
+      is_available: false
+      prepared_by: 2
+      times_attempted: 7
+      fastest_time: '00:10:15'
+      average_time: '00:15:25'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "success": true,
+               "data": {
+                   "id": 4,
+                   "title": "Some Quiz created for Testing",
+                   "description": "BRIEF DESCRIPTION OF QUIZ TOPIC AND RULES",
+                   "question_set": "[4, 5, 7, 11]",
+                   "level_id": "3",
+                   "field_id": "7",
+                   "skill_id": "8",
+                   "is_available": "0",
+                   "prepared_by": "2",
+                   "times_attempted": "7",
+                   "questions": null,
+                   "fastest_time": "00:10:15",
+                   "average_time": "00:15:25",
+                   "created_at": "2023-01-13T20:40:24.000000Z",
+                   "updated_at": "2023-01-14T00:23:51.000000Z",
+                   "deleted_at": null
+               },
+           "message": "Quiz #4 updated successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/quizzes/{id}'
+    metadata:
+      groupName: QuizAPI
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Mark a quiz record for deletion from storage (soft delete)'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the quiz.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      'http://localhost/api/quizzes/6':
+        name: 'http://localhost/api/quizzes/6'
+        description: ''
+        required: false
+        example: architecto
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 1
+      'http://localhost/api/quizzes/6': architecto
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "success": true,
+               "data": {
+                   "id": 6,
+                   "title": "Yet Another Quiz",
+                   "description": "This multiple-choice quiz will test your current knowledge about popular literature.",
+                   "question_set": "[4, 5, 10, 11]",
+                   "level_id": 3,
+                   "field_id": 5,
+                   "skill_id": 4,
+                   "is_available": 0,
+                   "prepared_by": null,
+                   "times_attempted": 0,
+                   "fastest_time": null,
+                   "average_time": null,
+                   "questions": null,
+                   "created_at": "2023-01-12T08:23:17.000000Z",
+                   "updated_at": "2023-01-12T08:23:17.000000Z",
+                   "deleted_at": null
+               },
+           "message": "Quiz #6 has been marked for deletion"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
