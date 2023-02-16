@@ -334,11 +334,13 @@ class UserAPIController extends APIBaseController
                         break;
                     case "country":
                         $rules = [
-                            'country' => 'size: 3',
+                            'required',
+                            'exists:countries,code_3',
                         ];
 
                         $error_messages = [
-                            'country.size' => 'A 3-letter country code is required for this field.',
+                            'country.required' => 'Country code is required.',
+                            'country.exists' => 'The Country cannot be found.',
                         ];
                         break;
                     case "email":

@@ -43,7 +43,7 @@ class APIUserValidation extends FormRequest
             ],
             'country' => [
                 'required',
-                'size: 3',
+                'exists:countries,code_3',
             ],
             'email' => [
                 'required',
@@ -89,8 +89,9 @@ class APIUserValidation extends FormRequest
             'city.required' => 'City name is required.',
             'city.min' => 'City name must be a minimum of 3 characters.',
             'city.max' => 'City name must be a maximum of 32 characters.',
-            'country.required' => 'Country name is required.',
-            'country.size' => 'Country code must be 3 characters in length.',
+            'country.required' => 'Country code is required.',
+            'country.exists' => 'The Country cannot be found.',
+            'level_id.exists' => 'The LevelID does not exist.',
             'email.required' => 'An e-mail address is required.',
             'email.email' => 'A valid e-mail address is required.',
             'email.unique' => 'A unique e-mail address is required.',
